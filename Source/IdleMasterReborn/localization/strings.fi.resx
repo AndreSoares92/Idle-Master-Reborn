@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -357,7 +357,9 @@ kirjautua sinun Steam tilillesi.</value>
     <value>minuutti</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Tietokoneesi sammutetaan pian.&#xA;&#xA;Huomautus: Peruuta painamalla Peruuta.</value>
+    <value>Tietokoneesi sammutetaan pian.
+
+Huomautus: Peruuta painamalla Peruuta.</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>korttia saatu</value>
@@ -399,7 +401,9 @@ kirjautua sinun Steam tilillesi.</value>
     <value>tuntia</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Haluatko varmasti, että Idle Master Reborn sammuttaa Windowsin valmistuttuaan?&#xA;&#xA;Huomautus: Tämä asetus on käytössä vain kerran.</value>
+    <value>Haluatko varmasti, että Idle Master Reborn sammuttaa Windowsin valmistuttuaan?
+
+Huomautus: Tämä asetus on käytössä vain kerran.</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Käsittele vain aiemmin pelattuja pelejä</value>
@@ -475,5 +479,22 @@ kirjautua sinun Steam tilillesi.</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Tavoite: {0} t</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Tarkista &amp;päivitykset</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Päivitys saatavilla</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Uusi versio (__latest__) on saatavilla! Käytät tällä hetkellä versiota __current__.
+
+Haluatko avata lataussivun?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Käytät jo uusinta versiota (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Päivitysten tarkistus epäonnistui: __error__</value>
   </data>
 </root>

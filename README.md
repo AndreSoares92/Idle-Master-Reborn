@@ -14,6 +14,7 @@ Get your [Steam Trading Cards](https://steamcommunity.com/tradingcards/) quickly
 - **Idling Modes & Priority:** Fast mode (simultaneous card dropping), individual/2-hour modes, and drop-count priority (default, most drops, least drops).
 - **Blacklist with Game Names:** Manage ignored App IDs together with their game names.
 - **System Tray & Window Persistence:** Quick tray menu (`Open window`, `Pause/Resume`, `Exit`) and automatic saving of window positions.
+- **Update Checker:** Checks [GitHub Releases](https://github.com/AndreSoares92/Idle-Master-Reborn/releases) for new versions (`Help → Check for Updates` and automatic startup check).
 
 ## Requirements
 
@@ -24,7 +25,7 @@ Get your [Steam Trading Cards](https://steamcommunity.com/tradingcards/) quickly
 
 ## Installation
 
-1. Download the latest `IdleMasterReborn-vX.X.X.zip` from the **Releases** page.
+1. Download the latest `IdleMasterReborn-vX.X.X.zip` from the [Releases](https://github.com/AndreSoares92/Idle-Master-Reborn/releases) page.
 2. Extract all files (keeping the `Languages` folder next to `IdleMasterReborn.exe`).
 3. Make sure Steam is open and logged in, then run `IdleMasterReborn.exe`.
 

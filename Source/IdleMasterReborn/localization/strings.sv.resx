@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -355,7 +355,9 @@ obehöriga kan logga in på ditt Steam-konto.</value>
     <value>minut</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Din dator kommer att stängas av.&#xA;&#xA;Obs: Tryck på Avbryt för att avbryta.</value>
+    <value>Din dator kommer att stängas av.
+
+Obs: Tryck på Avbryt för att avbryta.</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>kort mottagna</value>
@@ -397,7 +399,9 @@ obehöriga kan logga in på ditt Steam-konto.</value>
     <value>timmar</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Är du säker på att du vill att Idle Master Reborn ska stänga av Windows när det är klart?&#xA;&#xA;Obs: Den här inställningen gäller bara en gång.</value>
+    <value>Är du säker på att du vill att Idle Master Reborn ska stänga av Windows när det är klart?
+
+Obs: Den här inställningen gäller bara en gång.</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Kör endast spel som har spelats</value>
@@ -473,5 +477,22 @@ obehöriga kan logga in på ditt Steam-konto.</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Mål: {0} tim</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Sök efter &amp;uppdateringar</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Uppdatering tillgänglig</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>En ny version (__latest__) är tillgänglig! Du använder för närvarande __current__.
+
+Vill du öppna nedladdningssidan?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Du använder redan den senaste versionen (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Kunde inte söka efter uppdateringar: __error__</value>
   </data>
 </root>

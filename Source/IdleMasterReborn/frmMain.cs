@@ -24,6 +24,7 @@ namespace IdleMasterExtended
     public partial class frmMain : Form
     {
         private Statistics statistics = new Statistics();
+        private string _latestReleaseUrl = UpdateChecker.ReleasesUrl;
         public List<Badge> AllBadges { get; set; }
 
         public IEnumerable<Badge> CanIdleBadges
@@ -963,10 +964,10 @@ namespace IdleMasterExtended
             stopHourBoostToolStripMenuItem.Visible = Settings.Default.IdlingModeTargetHours || Settings.Default.IdlingModeWhitelist;
             blacklistCurrentGameToolStripMenuItem.Text = localization.strings.blacklist_current_game;
             statisticsToolStripMenuItem.Text = localization.strings.statistics;
+            checkForUpdatesToolStripMenuItem.Text = localization.strings.check_for_updates;
             aboutToolStripMenuItem.Text = localization.strings.about;
             lnkSignIn.Text = "(" + localization.strings.sign_in + ")";
             lnkResetCookies.Text = "(" + localization.strings.sign_out + ")";
-            // TODO: lnkLatestRelease = "(" + localization.strings.latest_release + ")";
             toolStripStatusLabel1.Text = localization.strings.next_check;
             toolStripStatusLabel1.ToolTipText = localization.strings.next_check;
 
@@ -997,6 +998,8 @@ namespace IdleMasterExtended
             {
                 PreventSleep();
             }
+
+            CheckForUpdatesAsync(false);
         }
 
         private void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
@@ -1314,6 +1317,105 @@ namespace IdleMasterExtended
         {
             var frm = new frmAbout();
             frm.ShowDialog();
+        }
+
+        private void checkForUpdatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CheckForUpdatesAsync(true);
+        }
+
+        private void lnkLatestRelease_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Process.Start(_latestReleaseUrl);
+            }
+            catch (Exception ex)
+            {
+                Logger.Exception(ex, "frmMain -> lnkLatestRelease_LinkClicked");
+            }
+        }
+
+        private async void CheckForUpdatesAsync(bool interactive)
+        {
+            if (interactive)
+                checkForUpdatesToolStripMenuItem.Enabled = false;
+
+            try
+            {
+                var result = await UpdateChecker.CheckForUpdatesAsync();
+                if (IsDisposed)
+                    return;
+
+                string currentStr = "v" + result.CurrentVersion.ToString(3);
+
+                if (!result.Success)
+                {
+                    if (interactive)
+                    {
+                        MessageBox.Show(
+                            localization.strings.update_check_failed.Replace("__error__", result.ErrorMessage ?? ""),
+                            localization.strings.check_for_updates.Replace("&", ""),
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    return;
+                }
+
+                if (result.UpdateAvailable)
+                {
+                    _latestReleaseUrl = string.IsNullOrEmpty(result.ReleaseUrl)
+                        ? UpdateChecker.ReleasesUrl
+                        : result.ReleaseUrl;
+                    string latestStr = string.IsNullOrEmpty(result.LatestTag)
+                        ? "v" + result.LatestVersion.ToString(3)
+                        : result.LatestTag;
+
+                    lnkLatestRelease.Text = localization.strings.update_available_title + " (" + latestStr + ")";
+                    lnkLatestRelease.Visible = true;
+
+                    if (interactive)
+                    {
+                        string msg = localization.strings.update_available_message
+                            .Replace("__latest__", latestStr)
+                            .Replace("__current__", currentStr);
+                        var dr = MessageBox.Show(
+                            msg,
+                            localization.strings.update_available_title,
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information);
+                        if (dr == DialogResult.Yes)
+                        {
+                            Process.Start(_latestReleaseUrl);
+                        }
+                    }
+                }
+                else if (interactive)
+                {
+                    MessageBox.Show(
+                        localization.strings.up_to_date_message.Replace("__current__", currentStr),
+                        localization.strings.check_for_updates.Replace("&", ""),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Exception(ex, "frmMain -> CheckForUpdatesAsync");
+                if (interactive && !IsDisposed)
+                {
+                    MessageBox.Show(
+                        localization.strings.update_check_failed.Replace("__error__", ex.Message),
+                        localization.strings.check_for_updates.Replace("&", ""),
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
+            finally
+            {
+                if (interactive && !IsDisposed)
+                    checkForUpdatesToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void RefreshAccountsMenu()
@@ -1799,6 +1901,7 @@ namespace IdleMasterExtended
                 blacklistCurrentGameToolStripMenuItem.Image = whiteIcons ? Resources.imgBlacklist_w : Resources.imgBlacklist;
                 // Help
                 statisticsToolStripMenuItem.Image = whiteIcons ? Resources.imgStatistics_w : Resources.imgStatistics;
+                checkForUpdatesToolStripMenuItem.Image = whiteIcons ? Resources.imgReload_w : Resources.imgReload;
                 aboutToolStripMenuItem.Image = whiteIcons ? Resources.imgInfo_w : Resources.imgInfo;
 
                 // STATUS

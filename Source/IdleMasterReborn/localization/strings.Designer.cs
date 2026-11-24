@@ -1000,5 +1000,35 @@ namespace IdleMasterExtended.localization {
                 return ResourceManager.GetString("target_hours_status", resourceCulture);
             }
         }
+
+        internal static string check_for_updates {
+            get {
+                return ResourceManager.GetString("check_for_updates", resourceCulture);
+            }
+        }
+
+        internal static string update_available_title {
+            get {
+                return ResourceManager.GetString("update_available_title", resourceCulture);
+            }
+        }
+
+        internal static string update_available_message {
+            get {
+                return ResourceManager.GetString("update_available_message", resourceCulture);
+            }
+        }
+
+        internal static string up_to_date_message {
+            get {
+                return ResourceManager.GetString("up_to_date_message", resourceCulture);
+            }
+        }
+
+        internal static string update_check_failed {
+            get {
+                return ResourceManager.GetString("update_check_failed", resourceCulture);
+            }
+        }
     }
 }

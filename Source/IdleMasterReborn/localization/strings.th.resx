@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -354,7 +354,9 @@
     <value>นาที</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>คอมพิวเตอร์ของคุณกำลังจะปิดเครื่อง&#xA;&#xA;หมายเหตุ: กด ยกเลิก เพื่อหยุดการปิดเครื่อง</value>
+    <value>คอมพิวเตอร์ของคุณกำลังจะปิดเครื่อง
+
+หมายเหตุ: กด ยกเลิก เพื่อหยุดการปิดเครื่อง</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>การ์ดที่ได้รับ</value>
@@ -396,7 +398,9 @@
     <value>ชั่วโมง</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>คุณแน่ใจหรือไม่ว่าต้องการให้ Idle Master Reborn ปิดเครื่อง Windows เมื่อทำงานเสร็จสิ้น?&#xA;&#xA;หมายเหตุ: การตั้งค่านี้จะมีผลเพียงครั้งเดียวเท่านั้น</value>
+    <value>คุณแน่ใจหรือไม่ว่าต้องการให้ Idle Master Reborn ปิดเครื่อง Windows เมื่อทำงานเสร็จสิ้น?
+
+หมายเหตุ: การตั้งค่านี้จะมีผลเพียงครั้งเดียวเท่านั้น</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>เปิดเฉพาะเกมที่เคยเล่นแล้วเท่านั้น</value>
@@ -472,5 +476,22 @@
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>เป้าหมาย: {0} ชม.</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>ตรวจสอบการ&amp;อัปเดต</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>มีอัปเดตใหม่</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>มีเวอร์ชันใหม่ (__latest__) พร้อมให้ใช้งาน! คุณกำลังใช้ __current__
+
+คุณต้องการเปิดหน้าดาวน์โหลดหรือไม่?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>คุณกำลังใช้เวอร์ชันล่าสุด (__current__) อยู่แล้ว</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>ไม่สามารถตรวจสอบการอัปเดตได้: __error__</value>
   </data>
 </root>

@@ -351,7 +351,9 @@ vaš Steam račun.</value>
     <value>&amp;Bijela Lista</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Jeste li sigurni da želite da Idle Master Reborn isključi Windows kada završi?&#xA;&#xA;Napomena: ova će postavka biti aktivna samo jednom.</value>
+    <value>Jeste li sigurni da želite da Idle Master Reborn isključi Windows kada završi?
+
+Napomena: ova će postavka biti aktivna samo jednom.</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>Obrada dovršena</value>
@@ -396,7 +398,9 @@ vaš Steam račun.</value>
     <value>Način bijele liste (Datoteka &gt; Bijela lista)</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Vaše će se računalo uskoro isključiti.&#xA;&#xA;Napomena: pritisnite Odustani za prekid.</value>
+    <value>Vaše će se računalo uskoro isključiti.
+
+Napomena: pritisnite Odustani za prekid.</value>
   </data>
   <data name="not_required_hint" xml:space="preserve">
     <value>(obično nije potrebno)</value>
@@ -475,5 +479,22 @@ vaš Steam račun.</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Cilj: {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Provjeri &amp;ažuriranja</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Dostupno ažuriranje</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Dostupna je nova verzija (__latest__)! Trenutno koristite __current__.
+
+Želite li otvoriti stranicu za preuzimanje?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Već koristite najnoviju verziju (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Nije moguće provjeriti ažuriranja: __error__</value>
   </data>
 </root>

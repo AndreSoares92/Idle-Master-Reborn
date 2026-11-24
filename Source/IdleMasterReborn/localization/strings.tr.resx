@@ -350,7 +350,9 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
     <value>&amp;Beyaz Liste</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Idle Master Reborn tamamlandığında Windows&apos;u kapatmak istediğinizden emin misiniz?&#xA;&#xA;Not: Bu ayar yalnızca bir kez etkin olacaktır.</value>
+    <value>Idle Master Reborn tamamlandığında Windows'u kapatmak istediğinizden emin misiniz?
+
+Not: Bu ayar yalnızca bir kez etkin olacaktır.</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>İşlem Tamamlandı</value>
@@ -374,7 +376,7 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
     <value>dakika</value>
   </data>
   <data name="prevent_sleep" xml:space="preserve">
-    <value>Windows&apos;un uyku moduna geçmesini engelle</value>
+    <value>Windows'un uyku moduna geçmesini engelle</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Yalnızca daha önce oynanmış oyunları çalıştır</value>
@@ -383,7 +385,7 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
     <value>Uygulama verileri klasörünü aç (AppData)</value>
   </data>
   <data name="shutdown_confirm_title" xml:space="preserve">
-    <value>Windows&apos;u Kapat</value>
+    <value>Windows'u Kapat</value>
   </data>
   <data name="stats_minutes" xml:space="preserve">
     <value>dakika</value>
@@ -395,7 +397,9 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
     <value>Beyaz liste modu (Dosya &gt; Beyaz liste)</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Bilgisayarınız yakında kapatılacak.&#xA;&#xA;Not: İptal etmek için İptal&apos;e basın.</value>
+    <value>Bilgisayarınız yakında kapatılacak.
+
+Not: İptal etmek için İptal'e basın.</value>
   </data>
   <data name="not_required_hint" xml:space="preserve">
     <value>(genellikle gerekmez)</value>
@@ -404,7 +408,7 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
     <value>Koyu tema</value>
   </data>
   <data name="shutdown_when_done" xml:space="preserve">
-    <value>Bittiğinde Windows&apos;u kapat</value>
+    <value>Bittiğinde Windows'u kapat</value>
   </data>
   <data name="reload_badges" xml:space="preserve">
     <value>&amp;Rozetleri Yenile</value>
@@ -474,5 +478,22 @@ aksi halde hırsızlar tarafından Steam hesabınıza giriş yapılma tehdidi ol
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Hedef: {0} sa</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>&amp;Güncellemeleri Denetle</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Güncelleme Mevcut</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Yeni bir sürüm (__latest__) mevcut! Şu anda __current__ kullanıyorsunuz.
+
+İndirme sayfasını açmak ister misiniz?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Zaten en son sürümü (__current__) kullanıyorsunuz.</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Güncellemeler denetlenemedi: __error__</value>
   </data>
 </root>

@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -350,7 +350,9 @@
     <value>白名單(&amp;W)</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>確定要在 Idle Master Reborn 完成後關閉 Windows 嗎？&#xA;&#xA;注意：此設定僅會生效一次。</value>
+    <value>確定要在 Idle Master Reborn 完成後關閉 Windows 嗎？
+
+注意：此設定僅會生效一次。</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>掛機完成</value>
@@ -395,7 +397,9 @@
     <value>白名單模式（檔案 &gt; 白名單）</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>您的電腦即將關機。&#xA;&#xA;注意：按「取消」即可中止。</value>
+    <value>您的電腦即將關機。
+
+注意：按「取消」即可中止。</value>
   </data>
   <data name="not_required_hint" xml:space="preserve">
     <value>（通常不需要）</value>
@@ -474,5 +478,22 @@
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>目標: {0} 小時</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>檢查更新(&amp;U)</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>有可用更新</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>發現新版本 (__latest__)！您目前使用的是 __current__。
+
+是否開啟下載頁面？</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>您使用的已是最新版本 (__current__)。</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>無法檢查更新: __error__</value>
   </data>
 </root>

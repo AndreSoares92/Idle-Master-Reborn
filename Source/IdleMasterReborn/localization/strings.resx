@@ -375,13 +375,17 @@ your Steam account.</value>
     <value>Shutdown Windows</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Are you sure you want Idle Master Reborn to shutdown Windows when idling is done?&#xA;&#xA;Note: This setting will only be active once.</value>
+    <value>Are you sure you want Idle Master Reborn to shutdown Windows when idling is done?
+
+Note: This setting will only be active once.</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>Idling Completed</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Your computer is about to shut down.&#xA;&#xA;Note: Press Cancel to abort.</value>
+    <value>Your computer is about to shut down.
+
+Note: Press Cancel to abort.</value>
   </data>
   <data name="stats_hour" xml:space="preserve">
     <value>hour</value>
@@ -475,5 +479,22 @@ your Steam account.</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Target: {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Check for &amp;Updates</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Update Available</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>A new version (__latest__) is available! You are currently using __current__.
+
+Would you like to open the download page?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>You are already using the latest version (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Could not check for updates: __error__</value>
   </data>
 </root>

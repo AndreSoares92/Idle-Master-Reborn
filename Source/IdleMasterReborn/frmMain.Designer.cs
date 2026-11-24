@@ -62,6 +62,7 @@ namespace IdleMasterExtended
             this.blacklistCurrentGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkForUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrReadyToGo = new System.Windows.Forms.Timer(this.components);
@@ -351,6 +352,7 @@ namespace IdleMasterExtended
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statisticsToolStripMenuItem,
+            this.checkForUpdatesToolStripMenuItem,
             this.toolStripMenuItem3,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -361,9 +363,17 @@ namespace IdleMasterExtended
             // 
             this.statisticsToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgStatistics;
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statisticsToolStripMenuItem.Text = "&Statistics";
             this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
+            // 
+            // checkForUpdatesToolStripMenuItem
+            // 
+            this.checkForUpdatesToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgReload;
+            this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkForUpdatesToolStripMenuItem.Text = "Check for &Updates";
+            this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -584,6 +594,7 @@ namespace IdleMasterExtended
             this.lnkLatestRelease.TabStop = true;
             this.lnkLatestRelease.Text = "";
             this.lnkLatestRelease.Visible = false;
+            this.lnkLatestRelease.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLatestRelease_LinkClicked);
             // 
             // frmMain
             // 
@@ -692,6 +703,7 @@ namespace IdleMasterExtended
         private Label lblHoursPlayed;
         private Timer tmrStatistics;
         private ToolStripMenuItem statisticsToolStripMenuItem;
+        private ToolStripMenuItem checkForUpdatesToolStripMenuItem;
         private LinkLabel lnkLatestRelease;
         private ToolStripMenuItem accountsToolStripMenuItem;
     }

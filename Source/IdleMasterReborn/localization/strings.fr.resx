@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -350,7 +350,9 @@ celles-ci peuvent être utilisées par un pirate pour se connecter à votre comp
     <value>&amp;Liste blanche</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Voulez-vous vraiment que Idle Master Reborn éteigne Windows une fois terminé ?&#xA;&#xA;Remarque : ce paramètre ne sera actif qu&apos;une seule fois.</value>
+    <value>Voulez-vous vraiment que Idle Master Reborn éteigne Windows une fois terminé ?
+
+Remarque : ce paramètre ne sera actif qu'une seule fois.</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>Traitement terminé</value>
@@ -395,7 +397,9 @@ celles-ci peuvent être utilisées par un pirate pour se connecter à votre comp
     <value>Mode liste blanche (Fichier &gt; Liste blanche)</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Votre ordinateur va bientôt s&apos;éteindre.&#xA;&#xA;Remarque : cliquez sur Annuler pour annuler.</value>
+    <value>Votre ordinateur va bientôt s'éteindre.
+
+Remarque : cliquez sur Annuler pour annuler.</value>
   </data>
   <data name="not_required_hint" xml:space="preserve">
     <value>(généralement non requis)</value>
@@ -443,7 +447,7 @@ celles-ci peuvent être utilisées par un pirate pour se connecter à votre comp
     <value>Sélectionnés : {0} / {1}</value>
   </data>
   <data name="library_limit_reached" xml:space="preserve">
-    <value>Vous pouvez sélectionner jusqu&apos;à {0} jeux à la fois.</value>
+    <value>Vous pouvez sélectionner jusqu'à {0} jeux à la fois.</value>
   </data>
   <data name="library_loading" xml:space="preserve">
     <value>Chargement de votre bibliothèque Steam...</value>
@@ -458,21 +462,38 @@ celles-ci peuvent être utilisées par un pirate pour se connecter à votre comp
     <value>Démarrer</value>
   </data>
   <data name="library_target_hours" xml:space="preserve">
-    <value>Objectif d&apos;heures par jeu :</value>
+    <value>Objectif d'heures par jeu :</value>
   </data>
   <data name="library_start_target" xml:space="preserve">
-    <value>Farmer tout jusqu&apos;à l&apos;objectif</value>
+    <value>Farmer tout jusqu'à l'objectif</value>
   </data>
   <data name="library_no_games_below_target" xml:space="preserve">
     <value>Tous vos jeux ont déjà au moins {0} heures.</value>
   </data>
   <data name="stop_hour_boost" xml:space="preserve">
-    <value>Arrêter le farm d&apos;heures (Retour aux cartes)</value>
+    <value>Arrêter le farm d'heures (Retour aux cartes)</value>
   </data>
   <data name="tray_show" xml:space="preserve">
     <value>Afficher la fenêtre</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Objectif : {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Rechercher des &amp;mises à jour</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Mise à jour disponible</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Une nouvelle version (__latest__) est disponible ! Vous utilisez actuellement __current__.
+
+Voulez-vous ouvrir la page de téléchargement ?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Vous utilisez déjà la dernière version (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Impossible de rechercher les mises à jour : __error__</value>
   </data>
 </root>

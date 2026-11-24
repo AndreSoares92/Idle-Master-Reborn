@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -356,7 +356,9 @@ mohli by být zneužity útočníkem pro přihlášení k vašemu účtu Steam.<
     <value>minuta</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Váš počítač se brzy vypne.&#xA;&#xA;Poznámka: Stisknutím Storno akci zrušíte.</value>
+    <value>Váš počítač se brzy vypne.
+
+Poznámka: Stisknutím Storno akci zrušíte.</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>získaných karet</value>
@@ -398,7 +400,9 @@ mohli by být zneužity útočníkem pro přihlášení k vašemu účtu Steam.<
     <value>hodin</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Opravdu chcete, aby Idle Master Reborn po dokončení vypnul Windows?&#xA;&#xA;Poznámka: Toto nastavení bude aktivní pouze jednou.</value>
+    <value>Opravdu chcete, aby Idle Master Reborn po dokončení vypnul Windows?
+
+Poznámka: Toto nastavení bude aktivní pouze jednou.</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Spouštět pouze již hrané hry</value>
@@ -474,5 +478,22 @@ mohli by být zneužity útočníkem pro přihlášení k vašemu účtu Steam.<
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Cíl: {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Zkontrolovat &amp;aktualizace</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Dostupná aktualizace</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Je dostupná nová verze (__latest__)! Právě používáte __current__.
+
+Chcete otevřít stránku ke stažení?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Již používáte nejnovější verzi (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Nepodařilo se zkontrolovat aktualizace: __error__</value>
   </data>
 </root>

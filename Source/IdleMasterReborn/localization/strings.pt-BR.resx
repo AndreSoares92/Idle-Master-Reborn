@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -373,13 +373,17 @@ não compartilhe essa informação com ninguém, pois poderá ser usada por pess
     <value>Desligar o Windows</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Tem certeza de que deseja que o Idle Master Reborn desligue o Windows ao terminar?&#xA;&#xA;Observação: esta opção ficará ativa apenas uma vez.</value>
+    <value>Tem certeza de que deseja que o Idle Master Reborn desligue o Windows ao terminar?
+
+Observação: esta opção ficará ativa apenas uma vez.</value>
   </data>
   <data name="shutdown_abort_title" xml:space="preserve">
     <value>Processamento concluído</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Seu computador será desligado em breve.&#xA;&#xA;Observação: clique em Cancelar para abortar.</value>
+    <value>Seu computador será desligado em breve.
+
+Observação: clique em Cancelar para abortar.</value>
   </data>
   <data name="stats_hour" xml:space="preserve">
     <value>hora</value>
@@ -473,5 +477,22 @@ não compartilhe essa informação com ninguém, pois poderá ser usada por pess
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Meta: {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Verificar &amp;atualizações</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Atualização disponível</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Uma nova versão (__latest__) está disponível! Você está usando a versão __current__.
+
+Deseja abrir a página de download?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Você já está usando a versão mais recente (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Não foi possível verificar atualizações: __error__</value>
   </data>
 </root>

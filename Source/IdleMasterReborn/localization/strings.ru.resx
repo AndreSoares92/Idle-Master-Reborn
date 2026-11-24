@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -357,7 +357,9 @@
     <value>минута</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Ваш компьютер скоро выключится.&#xA;&#xA;Примечание: нажмите Отмена, чтобы прервать.</value>
+    <value>Ваш компьютер скоро выключится.
+
+Примечание: нажмите Отмена, чтобы прервать.</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>карт получено</value>
@@ -399,7 +401,9 @@
     <value>часов</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>Вы уверены, что хотите, чтобы Idle Master Reborn выключил Windows после завершения?&#xA;&#xA;Примечание: этот параметр сработает только один раз.</value>
+    <value>Вы уверены, что хотите, чтобы Idle Master Reborn выключил Windows после завершения?
+
+Примечание: этот параметр сработает только один раз.</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Запускать только ранее запущенные игры</value>
@@ -475,5 +479,22 @@
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Цель: {0} ч</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Проверить &amp;обновления</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Доступно обновление</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>Доступна новая версия (__latest__)! Вы используете __current__.
+
+Открыть страницу загрузки?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Вы уже используете последнюю версию (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>Не удалось проверить обновления: __error__</value>
   </data>
 </root>

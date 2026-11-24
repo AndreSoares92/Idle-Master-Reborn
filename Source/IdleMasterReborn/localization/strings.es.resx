@@ -60,45 +60,45 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -357,7 +357,9 @@ tu cuenta de Steam.</value>
     <value>minuto</value>
   </data>
   <data name="shutdown_abort_msg" xml:space="preserve">
-    <value>Su equipo está a punto de apagarse.&#xA;&#xA;Nota: Pulse Cancelar para abortar.</value>
+    <value>Su equipo está a punto de apagarse.
+
+Nota: Pulse Cancelar para abortar.</value>
   </data>
   <data name="stats_cards_idled" xml:space="preserve">
     <value>cromos obtenidos</value>
@@ -399,7 +401,9 @@ tu cuenta de Steam.</value>
     <value>horas</value>
   </data>
   <data name="shutdown_confirm_msg" xml:space="preserve">
-    <value>¿Está seguro de que desea que Idle Master Reborn apague Windows al terminar?&#xA;&#xA;Nota: Esta configuración solo estará activa una vez.</value>
+    <value>¿Está seguro de que desea que Idle Master Reborn apague Windows al terminar?
+
+Nota: Esta configuración solo estará activa una vez.</value>
   </data>
   <data name="idle_only_played" xml:space="preserve">
     <value>Procesar solo juegos ya jugados</value>
@@ -475,5 +479,22 @@ tu cuenta de Steam.</value>
   </data>
   <data name="target_hours_status" xml:space="preserve">
     <value>Meta: {0} h</value>
+  </data>
+  <data name="check_for_updates" xml:space="preserve">
+    <value>Buscar &amp;actualizaciones</value>
+  </data>
+  <data name="update_available_title" xml:space="preserve">
+    <value>Actualización disponible</value>
+  </data>
+  <data name="update_available_message" xml:space="preserve">
+    <value>¡Hay una nueva versión (__latest__) disponible! Actualmente estás usando __current__.
+
+¿Deseas abrir la página de descarga?</value>
+  </data>
+  <data name="up_to_date_message" xml:space="preserve">
+    <value>Ya estás usando la versión más reciente (__current__).</value>
+  </data>
+  <data name="update_check_failed" xml:space="preserve">
+    <value>No se pudieron buscar actualizaciones: __error__</value>
   </data>
 </root>
