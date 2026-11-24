@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public partial class frmSettings : Form
     {

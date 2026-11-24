@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     partial class frmMain
     {
@@ -238,7 +238,7 @@ namespace IdleMasterExtended
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgSettings;
+            this.settingsToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgSettings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.settingsToolStripMenuItem.Text = "&Settings";
@@ -246,7 +246,7 @@ namespace IdleMasterExtended
             // 
             // blacklistToolStripMenuItem
             // 
-            this.blacklistToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgBlacklist;
+            this.blacklistToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgBlacklist;
             this.blacklistToolStripMenuItem.Name = "blacklistToolStripMenuItem";
             this.blacklistToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.blacklistToolStripMenuItem.Text = "&Blacklist";
@@ -254,7 +254,7 @@ namespace IdleMasterExtended
             // 
             // accountsToolStripMenuItem
             // 
-            this.accountsToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgAccounts;
+            this.accountsToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgAccounts;
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
             this.accountsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.accountsToolStripMenuItem.Text = "&Accounts";
@@ -266,7 +266,7 @@ namespace IdleMasterExtended
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgExit;
+            this.exitToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgExit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
@@ -312,7 +312,7 @@ namespace IdleMasterExtended
             // 
             // reloadBadgesToolStripMenuItem
             // 
-            this.reloadBadgesToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgReload;
+            this.reloadBadgesToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgReload;
             this.reloadBadgesToolStripMenuItem.Name = "reloadBadgesToolStripMenuItem";
             this.reloadBadgesToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.reloadBadgesToolStripMenuItem.Text = "&Reload Badges";
@@ -320,7 +320,7 @@ namespace IdleMasterExtended
             // 
             // hourBoostToolStripMenuItem
             // 
-            this.hourBoostToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgClock;
+            this.hourBoostToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgClock;
             this.hourBoostToolStripMenuItem.Name = "hourBoostToolStripMenuItem";
             this.hourBoostToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.hourBoostToolStripMenuItem.Text = "Hour Boost";
@@ -328,7 +328,7 @@ namespace IdleMasterExtended
             // 
             // stopHourBoostToolStripMenuItem
             // 
-            this.stopHourBoostToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgFalse;
+            this.stopHourBoostToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgFalse;
             this.stopHourBoostToolStripMenuItem.Name = "stopHourBoostToolStripMenuItem";
             this.stopHourBoostToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.stopHourBoostToolStripMenuItem.Text = "Stop Hour Boost (Back to Cards)";
@@ -342,7 +342,7 @@ namespace IdleMasterExtended
             // 
             // blacklistCurrentGameToolStripMenuItem
             // 
-            this.blacklistCurrentGameToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgBlacklist;
+            this.blacklistCurrentGameToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgBlacklist;
             this.blacklistCurrentGameToolStripMenuItem.Name = "blacklistCurrentGameToolStripMenuItem";
             this.blacklistCurrentGameToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.blacklistCurrentGameToolStripMenuItem.Text = "&Blacklist Current Game";
@@ -361,7 +361,7 @@ namespace IdleMasterExtended
             // 
             // statisticsToolStripMenuItem
             // 
-            this.statisticsToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgStatistics;
+            this.statisticsToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgStatistics;
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
             this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statisticsToolStripMenuItem.Text = "&Statistics";
@@ -369,7 +369,7 @@ namespace IdleMasterExtended
             // 
             // checkForUpdatesToolStripMenuItem
             // 
-            this.checkForUpdatesToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgReload;
+            this.checkForUpdatesToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgReload;
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
             this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkForUpdatesToolStripMenuItem.Text = "Check for &Updates";
@@ -382,7 +382,7 @@ namespace IdleMasterExtended
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Image = global::IdleMasterExtended.Properties.Resources.imgInfo;
+            this.aboutToolStripMenuItem.Image = global::IdleMasterReborn.Properties.Resources.imgInfo;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.aboutToolStripMenuItem.Text = "&About";
@@ -443,7 +443,7 @@ namespace IdleMasterExtended
             // 
             // picReadingPage
             // 
-            this.picReadingPage.Image = global::IdleMasterExtended.Properties.Resources.imgSpin;
+            this.picReadingPage.Image = global::IdleMasterReborn.Properties.Resources.imgSpin;
             this.picReadingPage.Location = new System.Drawing.Point(15, 90);
             this.picReadingPage.Name = "picReadingPage";
             this.picReadingPage.Size = new System.Drawing.Size(15, 16);
@@ -454,7 +454,7 @@ namespace IdleMasterExtended
             // btnSkip
             // 
             this.btnSkip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSkip.Image = global::IdleMasterExtended.Properties.Resources.imgSkipSmall;
+            this.btnSkip.Image = global::IdleMasterReborn.Properties.Resources.imgSkipSmall;
             this.btnSkip.Location = new System.Drawing.Point(360, 135);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(15, 16);
@@ -502,7 +502,7 @@ namespace IdleMasterExtended
             // btnPause
             // 
             this.btnPause.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPause.Image = global::IdleMasterExtended.Properties.Resources.imgPauseSmall;
+            this.btnPause.Image = global::IdleMasterReborn.Properties.Resources.imgPauseSmall;
             this.btnPause.Location = new System.Drawing.Point(343, 135);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(15, 16);
@@ -513,7 +513,7 @@ namespace IdleMasterExtended
             // btnResume
             // 
             this.btnResume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnResume.Image = global::IdleMasterExtended.Properties.Resources.imgPlaySmall;
+            this.btnResume.Image = global::IdleMasterReborn.Properties.Resources.imgPlaySmall;
             this.btnResume.Location = new System.Drawing.Point(343, 135);
             this.btnResume.Name = "btnResume";
             this.btnResume.Size = new System.Drawing.Size(15, 16);

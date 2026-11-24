@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class SavedAccount
     {

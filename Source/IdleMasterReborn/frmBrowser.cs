@@ -3,11 +3,11 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 using Microsoft.Web.WebView2.Core;
 using Microsoft.Web.WebView2.WinForms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class frmBrowser : Form
     {

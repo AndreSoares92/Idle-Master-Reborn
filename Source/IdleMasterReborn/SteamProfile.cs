@@ -2,9 +2,9 @@
 using System.Net;
 using System.Text;
 using System.Xml;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     internal class SteamProfile
     {

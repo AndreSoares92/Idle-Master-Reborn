@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public partial class frmAbout : Form
     {

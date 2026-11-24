@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IdleMasterExtended.localization {
+namespace IdleMasterReborn.localization {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace IdleMasterExtended.localization {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IdleMasterExtended.localization.strings", typeof(strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("IdleMasterReborn.localization.strings", typeof(strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

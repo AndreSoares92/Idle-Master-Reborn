@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class frmGameLibrary : Form
     {

@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     static class Program
     {

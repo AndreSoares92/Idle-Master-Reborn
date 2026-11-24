@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 using Steamworks;
 using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 using System.Globalization;
@@ -19,7 +19,7 @@ using System.Security.Principal;
 using System.Runtime.InteropServices;
 using Microsoft.Win32;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public partial class frmMain : Form
     {
@@ -844,11 +844,11 @@ namespace IdleMasterExtended
         {
             if (File.Exists(Environment.CurrentDirectory + "\\steam_api.dll") == false)
             {
-                CopyResource("IdleMasterExtended.Resources.steam_api.dll", Environment.CurrentDirectory + @"\steam_api.dll");
+                CopyResource("IdleMasterReborn.Resources.steam_api.dll", Environment.CurrentDirectory + @"\steam_api.dll");
             }
             if (File.Exists(Environment.CurrentDirectory + "\\steam-idle.exe") == false)
             {
-                CopyResource("IdleMasterExtended.Resources.steam-idle.exe", Environment.CurrentDirectory + @"\steam-idle.exe");
+                CopyResource("IdleMasterReborn.Resources.steam-idle.exe", Environment.CurrentDirectory + @"\steam-idle.exe");
             }
 
             // Update the settings, if needed.  When the application updates, settings will persist.

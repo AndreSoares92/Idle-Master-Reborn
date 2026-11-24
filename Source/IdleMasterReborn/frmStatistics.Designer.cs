@@ -1,4 +1,4 @@
-﻿namespace IdleMasterExtended
+﻿namespace IdleMasterReborn
 {
     partial class frmStatistics
     {

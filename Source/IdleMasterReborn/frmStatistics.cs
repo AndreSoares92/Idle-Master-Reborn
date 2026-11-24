@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public partial class frmStatistics : Form
     {

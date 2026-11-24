@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class UpdateCheckResult
     {

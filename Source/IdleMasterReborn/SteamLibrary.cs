@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using HtmlAgilityPack;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class OwnedGame
     {

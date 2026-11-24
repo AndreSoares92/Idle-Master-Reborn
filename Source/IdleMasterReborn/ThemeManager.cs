@@ -2,10 +2,10 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 using Microsoft.Win32;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     internal static class ThemeManager
     {

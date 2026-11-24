@@ -3,9 +3,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IdleMasterExtended.Properties;
+using IdleMasterReborn.Properties;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public partial class frmSettingsAdvanced : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace IdleMasterExtended
+﻿namespace IdleMasterReborn
 {
     public class Statistics
     {

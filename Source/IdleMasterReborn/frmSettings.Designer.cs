@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     partial class frmSettings
     {
@@ -301,7 +301,7 @@ namespace IdleMasterExtended
             // btnAdvanced
             // 
             this.btnAdvanced.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdvanced.Image = global::IdleMasterExtended.Properties.Resources.imgLock;
+            this.btnAdvanced.Image = global::IdleMasterReborn.Properties.Resources.imgLock;
             this.btnAdvanced.Location = new System.Drawing.Point(12, 428);
             this.btnAdvanced.Name = "btnAdvanced";
             this.btnAdvanced.Size = new System.Drawing.Size(25, 23);

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public class SavedWindowPosition
     {

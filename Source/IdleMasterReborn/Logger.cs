@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 
-namespace IdleMasterExtended
+namespace IdleMasterReborn
 {
     public static class Logger
     {
