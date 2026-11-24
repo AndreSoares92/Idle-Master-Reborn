@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Idle Master Reborn")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("IdleMasterReborn")]
 [assembly: AssemblyProduct("Idle Master Reborn")]
 [assembly: AssemblyCopyright("GNU General Public License v2.0")]
 [assembly: AssemblyTrademark("GNU General Public License v2.0")]
