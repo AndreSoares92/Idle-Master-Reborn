@@ -98,16 +98,17 @@ namespace IdleMasterReborn
                 form.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular);
             }
 
-            StyleButtons(form.Controls, isDark);
+            StyleControls(form.Controls, isDark);
         }
 
-        private static void StyleButtons(Control.ControlCollection controls, bool isDark)
+        private static void StyleControls(Control.ControlCollection controls, bool isDark)
         {
             foreach (Control ctrl in controls)
             {
                 var btn = ctrl as Button;
                 if (btn != null)
                 {
+                    btn.Paint -= DarkDisabledButton_Paint;
                     if (isDark)
                     {
                         btn.FlatStyle = FlatStyle.Flat;
@@ -117,6 +118,7 @@ namespace IdleMasterReborn
                         btn.FlatAppearance.BorderSize = 1;
                         btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(66, 66, 66);
                         btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(82, 82, 82);
+                        btn.Paint += DarkDisabledButton_Paint;
                     }
                     else
                     {
@@ -126,11 +128,100 @@ namespace IdleMasterReborn
                     }
                 }
 
+                var txt = ctrl as TextBox;
+                if (txt != null)
+                {
+                    txt.BorderStyle = BorderStyle.FixedSingle;
+                    if (isDark)
+                    {
+                        txt.BackColor = Color.FromArgb(45, 45, 45);
+                        txt.ForeColor = Settings.Default.colorTxt;
+                    }
+                    else
+                    {
+                        txt.BackColor = SystemColors.Window;
+                        txt.ForeColor = Settings.Default.colorTxtOriginal;
+                    }
+                }
+
+                var nud = ctrl as NumericUpDown;
+                if (nud != null)
+                {
+                    if (isDark)
+                    {
+                        nud.BackColor = Color.FromArgb(45, 45, 45);
+                        nud.ForeColor = Settings.Default.colorTxt;
+                    }
+                    else
+                    {
+                        nud.BackColor = SystemColors.Window;
+                        nud.ForeColor = Settings.Default.colorTxtOriginal;
+                    }
+                }
+
+                var cbo = ctrl as ComboBox;
+                if (cbo != null)
+                {
+                    if (isDark)
+                    {
+                        cbo.FlatStyle = FlatStyle.Flat;
+                        cbo.BackColor = Color.FromArgb(45, 45, 45);
+                        cbo.ForeColor = Settings.Default.colorTxt;
+                    }
+                    else
+                    {
+                        cbo.FlatStyle = FlatStyle.Standard;
+                        cbo.BackColor = SystemColors.Window;
+                        cbo.ForeColor = Settings.Default.colorTxtOriginal;
+                    }
+                }
+
+                var lst = ctrl as ListBox;
+                if (lst != null)
+                {
+                    lst.BorderStyle = BorderStyle.FixedSingle;
+                    if (isDark)
+                    {
+                        lst.BackColor = Color.FromArgb(32, 32, 32);
+                        lst.ForeColor = Settings.Default.colorTxt;
+                    }
+                    else
+                    {
+                        lst.BackColor = SystemColors.Window;
+                        lst.ForeColor = Settings.Default.colorTxtOriginal;
+                    }
+                }
+
                 if (ctrl.HasChildren)
                 {
-                    StyleButtons(ctrl.Controls, isDark);
+                    StyleControls(ctrl.Controls, isDark);
                 }
             }
+        }
+
+        private static void DarkDisabledButton_Paint(object sender, PaintEventArgs e)
+        {
+            var btn = sender as Button;
+            if (btn == null || btn.Enabled || string.IsNullOrEmpty(btn.Text))
+            {
+                return;
+            }
+
+            var rect = btn.ClientRectangle;
+            using (var bgBrush = new SolidBrush(Color.FromArgb(40, 40, 40)))
+            using (var borderPen = new Pen(Color.FromArgb(65, 65, 65)))
+            {
+                e.Graphics.FillRectangle(bgBrush, rect);
+                e.Graphics.DrawRectangle(borderPen, 0, 0, rect.Width - 1, rect.Height - 1);
+            }
+
+            TextRenderer.DrawText(
+                e.Graphics,
+                btn.Text,
+                btn.Font,
+                rect,
+                Color.FromArgb(135, 135, 135),
+                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         }
 
         private sealed class DarkMenuRenderer : ToolStripProfessionalRenderer
@@ -140,11 +231,20 @@ namespace IdleMasterReborn
             {
             }
 
+            protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+            {
+                if (e != null && e.Item != null)
+                {
+                    e.TextColor = e.Item.Enabled ? Color.FromArgb(220, 220, 220) : Color.FromArgb(120, 120, 120);
+                }
+                base.OnRenderItemText(e);
+            }
+
             protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
             {
                 if (e != null)
                 {
-                    e.ArrowColor = Color.FromArgb(220, 220, 220);
+                    e.ArrowColor = (e.Item == null || e.Item.Enabled) ? Color.FromArgb(220, 220, 220) : Color.FromArgb(120, 120, 120);
                 }
                 base.OnRenderArrow(e);
             }
