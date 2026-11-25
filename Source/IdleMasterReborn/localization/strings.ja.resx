@@ -495,4 +495,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>更新を確認できませんでした: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steamは別のアカウントです！</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>異なるSteamアカウント</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>SteamクライアントがIdle Master Rebornとは別のアカウントでログインしています。
+
+続行するにはSteamまたは「ファイル → アカウント」で同じアカウントに切り替えてください。</value>
+  </data>
 </root>

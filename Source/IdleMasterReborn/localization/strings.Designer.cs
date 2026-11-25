@@ -1030,5 +1030,23 @@ namespace IdleMasterReborn.localization {
                 return ResourceManager.GetString("update_check_failed", resourceCulture);
             }
         }
+
+        internal static string steam_account_mismatch {
+            get {
+                return ResourceManager.GetString("steam_account_mismatch", resourceCulture);
+            }
+        }
+
+        internal static string steam_account_mismatch_title {
+            get {
+                return ResourceManager.GetString("steam_account_mismatch_title", resourceCulture);
+            }
+        }
+
+        internal static string steam_account_mismatch_message {
+            get {
+                return ResourceManager.GetString("steam_account_mismatch_message", resourceCulture);
+            }
+        }
     }
 }

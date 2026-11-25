@@ -2,6 +2,7 @@
 using System.Net;
 using System.Text;
 using System.Xml;
+using Microsoft.Win32;
 using IdleMasterReborn.Properties;
 
 namespace IdleMasterReborn
@@ -56,6 +57,35 @@ namespace IdleMasterReborn
         internal static string GetSignedAs()
         {
             return localization.strings.signed_in_as + " " + GetDisplayName();
+        }
+
+        internal static string GetActiveSteamClientId()
+        {
+            try
+            {
+                using (var key = Registry.CurrentUser.OpenSubKey(@"Software\Valve\Steam\ActiveProcess"))
+                {
+                    if (key == null)
+                        return string.Empty;
+
+                    object pidObj = key.GetValue("pid");
+                    object activeUserObj = key.GetValue("ActiveUser");
+                    if (pidObj == null || activeUserObj == null)
+                        return string.Empty;
+
+                    int pid = Convert.ToInt32(pidObj);
+                    uint accountId = unchecked((uint)Convert.ToInt32(activeUserObj));
+                    if (pid <= 0 || accountId == 0)
+                        return string.Empty;
+
+                    ulong steamId64 = 76561197960265728UL + (ulong)accountId;
+                    return steamId64.ToString();
+                }
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
     }
 }

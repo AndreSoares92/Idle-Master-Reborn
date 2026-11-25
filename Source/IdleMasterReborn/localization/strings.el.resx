@@ -495,4 +495,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>Αποτυχία ελέγχου ενημερώσεων: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Το Steam είναι σε άλλο λογαριασμό!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Διαφορετικός λογαριασμός Steam</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Η εφαρμογή Steam είναι συνδεδεμένη σε διαφορετικό λογαριασμό από το Idle Master Reborn.
+
+Αλλάξτε στον ίδιο λογαριασμό στο Steam ή στο Αρχείο → Λογαριασμοί για να συνεχίσετε.</value>
+  </data>
 </root>

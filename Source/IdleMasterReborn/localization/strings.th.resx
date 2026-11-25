@@ -494,4 +494,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>ไม่สามารถตรวจสอบการอัปเดตได้: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam อยู่ในบัญชีอื่น!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>บัญชี Steam ไม่ตรงกัน</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>ไคลเอนต์ Steam เข้าสู่ระบบด้วยบัญชีอื่นที่ไม่ตรงกับ Idle Master Reborn
+
+สลับไปใช้บัญชีเดียวกันใน Steam หรือที่ ไฟล์ → บัญชี เพื่อดำเนินการต่อ</value>
+  </data>
 </root>

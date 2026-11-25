@@ -497,4 +497,15 @@ Vil du åpne nedlastingssiden?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Kunne ikke se etter oppdateringer: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam er på en annen konto!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Annen Steam-konto</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam-klienten er logget inn på en annen konto enn Idle Master Reborn.
+
+Bytt til samme konto i Steam eller under Fil → Kontoer for å fortsätta.</value>
+  </data>
 </root>

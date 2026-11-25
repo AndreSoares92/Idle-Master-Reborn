@@ -496,4 +496,15 @@ Not: İptal etmek için İptal'e basın.</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Güncellemeler denetlenemedi: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam başka bir hesapta!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Farklı Steam Hesabı</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam istemcisi Idle Master Reborn'dan farklı bir hesaba giriş yapmış.
+
+Devam etmek için Steam'de veya Dosya → Hesaplar bölümünden aynı hesaba geçin.</value>
+  </data>
 </root>

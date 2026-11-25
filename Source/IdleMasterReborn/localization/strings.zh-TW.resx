@@ -496,4 +496,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>無法檢查更新: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam 登入了其他帳號！</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Steam 帳號不一致</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam 用戶端登入的帳號與 Idle Master Reborn 不同。
+
+請在 Steam 或「檔案 → 帳號」中切換到相同帳號以繼續。</value>
+  </data>
 </root>

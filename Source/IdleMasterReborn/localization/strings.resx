@@ -497,4 +497,15 @@ Would you like to open the download page?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Could not check for updates: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam is on another account!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Different Steam Account</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>The Steam client is logged into a different account than Idle Master Reborn.
+
+Switch to the same account in Steam or in File → Accounts to continue.</value>
+  </data>
 </root>

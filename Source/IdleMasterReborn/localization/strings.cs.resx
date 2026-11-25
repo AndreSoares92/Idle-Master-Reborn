@@ -496,4 +496,15 @@ Chcete otevřít stránku ke stažení?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Nepodařilo se zkontrolovat aktualizace: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam je na jiném účtu!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Jiný účet Steam</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Klient Steam je přihlášen k jinému účtu než Idle Master Reborn.
+
+Pro pokračování přepněte na stejný účet ve Steamu nebo v Soubor → Účty.</value>
+  </data>
 </root>

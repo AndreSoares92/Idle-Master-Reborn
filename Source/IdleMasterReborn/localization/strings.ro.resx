@@ -497,4 +497,15 @@ Dorești să deschizi pagina de descărcare?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Nu s-au putut verifica actualizările: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam este pe alt cont!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Cont Steam diferit</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Clientul Steam este conectat la un alt cont decât Idle Master Reborn.
+
+Comută la același cont în Steam sau în Fișier → Conturi pentru a continua.</value>
+  </data>
 </root>

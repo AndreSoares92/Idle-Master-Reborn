@@ -25,6 +25,9 @@ namespace IdleMasterReborn
     {
         private Statistics statistics = new Statistics();
         private string _latestReleaseUrl = UpdateChecker.ReleasesUrl;
+        private string _lastAccountMismatchKey = "";
+        private bool _showingAccountMismatchDialog = false;
+        private bool _wasAccountMismatch = false;
         public List<Badge> AllBadges { get; set; }
 
         public IEnumerable<Badge> CanIdleBadges
@@ -1770,6 +1773,58 @@ namespace IdleMasterReborn
             var colorGreen = Settings.Default.customTheme ? Settings.Default.colorSteamGreen : Color.Green; // Adjust the green depending on the theme
 
             var isSteamRunning = SteamAPI.IsSteamRunning() || Settings.Default.ignoreclient;
+            bool accountMismatch = false;
+            string mismatchKey = "";
+            if (!Settings.Default.ignoreclient && isSteamRunning && IsCookieReady)
+            {
+                string appSteamId = SteamProfile.GetSteamId();
+                string clientSteamId = SteamProfile.GetActiveSteamClientId();
+                if (!string.IsNullOrEmpty(appSteamId) && !string.IsNullOrEmpty(clientSteamId) &&
+                    !string.Equals(appSteamId, clientSteamId, StringComparison.Ordinal))
+                {
+                    accountMismatch = true;
+                    mismatchKey = appSteamId + "|" + clientSteamId;
+                }
+            }
+
+            if (accountMismatch)
+            {
+                lblSteamStatus.Text = localization.strings.steam_account_mismatch;
+                lblSteamStatus.ForeColor = Settings.Default.customTheme ? Color.FromArgb(255, 193, 7) : Color.DarkOrange;
+                picSteamStatus.Image = imgFalse;
+                tmrCheckSteam.Interval = 3000;
+                skipGameToolStripMenuItem.Enabled = false;
+                pauseIdlingToolStripMenuItem.Enabled = false;
+                IsSteamReady = false;
+                _wasAccountMismatch = true;
+
+                if (AllBadges != null && AllBadges.Any(b => b.InIdle))
+                {
+                    StopIdle();
+                }
+
+                if (!_showingAccountMismatchDialog && _lastAccountMismatchKey != mismatchKey)
+                {
+                    _lastAccountMismatchKey = mismatchKey;
+                    _showingAccountMismatchDialog = true;
+                    try
+                    {
+                        MessageBox.Show(
+                            this,
+                            localization.strings.steam_account_mismatch_message,
+                            localization.strings.steam_account_mismatch_title,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                    finally
+                    {
+                        _showingAccountMismatchDialog = false;
+                    }
+                }
+                return;
+            }
+
+            _lastAccountMismatchKey = "";
             lblSteamStatus.Text = isSteamRunning ? (Settings.Default.ignoreclient ? localization.strings.steam_ignored : localization.strings.steam_running) : localization.strings.steam_notrunning;
             lblSteamStatus.ForeColor = isSteamRunning ? colorGreen : this.ForeColor; // JN: Changed color of the not connected status
             picSteamStatus.Image = isSteamRunning ? imgTrue : imgFalse; // JN: Supports dark theme
@@ -1777,6 +1832,12 @@ namespace IdleMasterReborn
             skipGameToolStripMenuItem.Enabled = isSteamRunning;
             pauseIdlingToolStripMenuItem.Enabled = isSteamRunning;
             IsSteamReady = isSteamRunning;
+
+            if (_wasAccountMismatch && isSteamRunning && IsCookieReady)
+            {
+                _wasAccountMismatch = false;
+                tmrReadyToGo.Enabled = true;
+            }
 
         }
 

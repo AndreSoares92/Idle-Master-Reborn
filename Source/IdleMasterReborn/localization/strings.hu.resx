@@ -494,4 +494,15 @@ Megnyitja a letöltési oldalt?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Nem sikerült ellenőrizni a frissítéseket: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>A Steam másik fiókon van!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Eltérő Steam-fiók</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>A Steam kliens másik fiókba van bejelentkezve, mint az Idle Master Reborn.
+
+Váltson ugyanarra a fiókra a Steamben vagy a Fájl → Fiókok menüben a folytatáshoz.</value>
+  </data>
 </root>

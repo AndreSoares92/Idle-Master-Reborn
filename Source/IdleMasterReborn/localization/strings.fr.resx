@@ -496,4 +496,15 @@ Voulez-vous ouvrir la page de téléchargement ?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Impossible de rechercher les mises à jour : __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam est sur un autre compte !</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Compte Steam différent</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Le client Steam est connecté à un compte différent d'Idle Master Reborn.
+
+Passez sur le même compte dans Steam ou dans Fichier → Comptes pour continuer.</value>
+  </data>
 </root>

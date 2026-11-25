@@ -496,4 +496,15 @@ Wilt u de downloadpagina openen?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Kan niet controleren op updates: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam gebruikt een ander account!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Ander Steam-account</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>De Steam-client is aangemeld met een ander account dan Idle Master Reborn.
+
+Schakel over naar hetzelfde account in Steam of via Bestand → Accounts om door te gaan.</value>
+  </data>
 </root>

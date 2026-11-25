@@ -496,4 +496,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>업데이트를 확인할 수 없습니다: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam이 다른 계정입니다!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>다른 Steam 계정</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam 클라이언트가 Idle Master Reborn과 다른 계정에 로그인되어 있습니다.
+
+계속하려면 Steam 또는 파일 → 계정에서 같은 계정으로 전환하세요.</value>
+  </data>
 </root>

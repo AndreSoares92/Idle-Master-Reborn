@@ -497,4 +497,15 @@
   <data name="update_check_failed" xml:space="preserve">
     <value>Не удалось проверить обновления: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>В Steam открыт другой аккаунт!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Другой аккаунт Steam</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Клиент Steam вошёл в другой аккаунт, отличный от Idle Master Reborn.
+
+Переключитесь на тот же аккаунт в Steam или в Файл → Аккаунты, чтобы продолжить.</value>
+  </data>
 </root>

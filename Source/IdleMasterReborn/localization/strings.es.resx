@@ -497,4 +497,15 @@ Nota: Esta configuración solo estará activa una vez.</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>No se pudieron buscar actualizaciones: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>¡Steam está en otra cuenta!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Cuenta de Steam diferente</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>El cliente de Steam ha iniciado sesión en una cuenta diferente a Idle Master Reborn.
+
+Cambia a la misma cuenta en Steam o en Archivo → Cuentas para continuar.</value>
+  </data>
 </root>

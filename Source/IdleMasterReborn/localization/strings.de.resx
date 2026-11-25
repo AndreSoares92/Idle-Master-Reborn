@@ -497,4 +497,15 @@ Möchten Sie die Download-Seite öffnen?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Updates konnten nicht geprüft werden: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam verwendet ein anderes Konto!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Anderes Steam-Konto</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Der Steam-Client ist mit einem anderen Konto als Idle Master Reborn angemeldet.
+
+Wechseln Sie in Steam oder unter Datei → Konten zum selben Konto, um fortzufahren.</value>
+  </data>
 </root>

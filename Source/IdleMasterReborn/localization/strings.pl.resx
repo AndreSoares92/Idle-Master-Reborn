@@ -497,4 +497,15 @@ Czy chcesz otworzyć stronę pobierania?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Nie można sprawdzić aktualizacji: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam używa innego konta!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Inne konto Steam</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Klient Steam jest zalogowany na inne konto niż Idle Master Reborn.
+
+Przełącz się na to samo konto w Steam lub w Plik → Konta, aby kontynuować.</value>
+  </data>
 </root>

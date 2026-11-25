@@ -497,4 +497,15 @@ Napomena: pritisnite Odustani za prekid.</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Nije moguće provjeriti ažuriranja: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam je na drugom računu!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Drugačiji Steam račun</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam klijent je prijavljen na drugačiji račun od Idle Master Reborna.
+
+Prebacite se na isti račun u Steamu ili u Datoteka → Računi za nastavak.</value>
+  </data>
 </root>

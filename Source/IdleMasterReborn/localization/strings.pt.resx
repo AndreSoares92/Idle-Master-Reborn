@@ -497,4 +497,15 @@ Deseja abrir a página de transferência?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Não foi possível procurar atualizações: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>O Steam está noutra conta!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Conta Steam diferente</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>O cliente Steam tem sessão iniciada numa conta diferente do Idle Master Reborn.
+
+Mude para a mesma conta no Steam ou em Ficheiro → Contas para continuar.</value>
+  </data>
 </root>

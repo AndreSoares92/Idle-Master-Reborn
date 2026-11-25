@@ -497,4 +497,15 @@ Haluatko avata lataussivun?</value>
   <data name="update_check_failed" xml:space="preserve">
     <value>Päivitysten tarkistus epäonnistui: __error__</value>
   </data>
+  <data name="steam_account_mismatch" xml:space="preserve">
+    <value>Steam on toisella tilillä!</value>
+  </data>
+  <data name="steam_account_mismatch_title" xml:space="preserve">
+    <value>Eri Steam-tili</value>
+  </data>
+  <data name="steam_account_mismatch_message" xml:space="preserve">
+    <value>Steam-ohjelma on kirjautunut eri tilille kuin Idle Master Reborn.
+
+Vaihda samaan tiliin Steamissä tai kohdassa Tiedosto → Tilit jatkaaksesi.</value>
+  </data>
 </root>
