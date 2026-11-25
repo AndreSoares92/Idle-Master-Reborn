@@ -68,7 +68,6 @@ namespace IdleMasterReborn
             this.tmrReadyToGo = new System.Windows.Forms.Timer(this.components);
             this.tmrCardDropCheck = new System.Windows.Forms.Timer(this.components);
             this.ssFooter = new System.Windows.Forms.StatusStrip();
-            this.pbIdle = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblTimer = new System.Windows.Forms.ToolStripStatusLabel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -405,7 +404,6 @@ namespace IdleMasterReborn
             // 
             this.ssFooter.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.ssFooter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pbIdle,
             this.toolStripStatusLabel1,
             this.lblTimer});
             this.ssFooter.Location = new System.Drawing.Point(0, 317);
@@ -417,20 +415,12 @@ namespace IdleMasterReborn
             this.ssFooter.Text = "statusStrip1";
             this.ssFooter.Visible = false;
             // 
-            // pbIdle
-            // 
-            this.pbIdle.Maximum = 1;
-            this.pbIdle.Name = "pbIdle";
-            this.pbIdle.Size = new System.Drawing.Size(130, 16);
-            this.pbIdle.Step = 1;
-            // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.AutoSize = false;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(115, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(63, 17);
             this.toolStripStatusLabel1.Text = "Next check";
-            this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripStatusLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTimer
             // 
@@ -678,7 +668,6 @@ namespace IdleMasterReborn
         private Timer tmrReadyToGo;
         private Timer tmrCardDropCheck;
         private StatusStrip ssFooter;
-        private ToolStripProgressBar pbIdle;
         private ToolStripStatusLabel lblTimer;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Button btnPause;

@@ -255,8 +255,6 @@ namespace IdleMasterReborn
             }
 
             lblCurrentRemaining.Text = badge.RemainingCard == -1 ? "" : badge.RemainingCard + " " + localization.strings.card_drops_remaining;
-            pbIdle.Maximum = CardsRemaining > pbIdle.Maximum ? CardsRemaining : pbIdle.Maximum;
-            pbIdle.Value = pbIdle.Maximum - CardsRemaining;
             lblHoursPlayed.Text = badge.HoursPlayed + " " + localization.strings.hrs_on_record;
             LayoutMainControls();
             UpdateStateInfo();
@@ -537,8 +535,7 @@ namespace IdleMasterReborn
             lblHoursPlayed.Visible = !Settings.Default.IdlingModeWhitelist;
             lblHoursPlayed.Text = CurrentBadge.HoursPlayed + " " + localization.strings.hrs_on_record;
 
-            // Set progress bar values and show the footer
-            pbIdle.Maximum = CardsRemaining > pbIdle.Maximum ? CardsRemaining : pbIdle.Maximum;
+            // Show the footer
             ssFooter.Visible = true;
 
             // Start the animated "working" gif
