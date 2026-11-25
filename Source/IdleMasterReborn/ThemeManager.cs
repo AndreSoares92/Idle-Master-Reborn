@@ -15,12 +15,16 @@ namespace IdleMasterReborn
         private const int DwmwaCaptionColor = 35;
         private const int DwmwaTextColor = 36;
         private const int DwmwaColorDefault = unchecked((int)0xFFFFFFFF);
+        private const int LvmGetHeader = 0x101F;
 
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
 
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
         private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
         internal static bool IsWindowsDarkTheme()
         {
@@ -213,6 +217,9 @@ namespace IdleMasterReborn
                     lv.DrawColumnHeader -= DarkListView_DrawColumnHeader;
                     lv.DrawItem -= DarkListView_DrawItem;
                     lv.DrawSubItem -= DarkListView_DrawSubItem;
+                    lv.SizeChanged -= ListView_SizeChanged;
+                    lv.SizeChanged += ListView_SizeChanged;
+                    AutoFillFirstColumn(lv);
 
                     if (isDark)
                     {
@@ -245,13 +252,7 @@ namespace IdleMasterReborn
 
             if (ctrl.IsHandleCreated)
             {
-                try
-                {
-                    SetWindowTheme(ctrl.Handle, isDark ? "DarkMode_Explorer" : "Explorer", null);
-                }
-                catch
-                {
-                }
+                ApplyNativeThemeToHandle(ctrl, isDark);
             }
             else
             {
@@ -267,24 +268,72 @@ namespace IdleMasterReborn
             if (ctrl == null || !(ctrl.Tag is bool))
                 return;
 
-            bool isDark = (bool)ctrl.Tag;
+            ApplyNativeThemeToHandle(ctrl, (bool)ctrl.Tag);
+        }
+
+        private static void ApplyNativeThemeToHandle(Control ctrl, bool isDark)
+        {
             try
             {
                 SetWindowTheme(ctrl.Handle, isDark ? "DarkMode_Explorer" : "Explorer", null);
+                var lv = ctrl as ListView;
+                if (lv != null)
+                {
+                    IntPtr headerHwnd = SendMessage(lv.Handle, LvmGetHeader, IntPtr.Zero, IntPtr.Zero);
+                    if (headerHwnd != IntPtr.Zero)
+                    {
+                        SetWindowTheme(headerHwnd, isDark ? "DarkMode_ItemsView" : "Explorer", null);
+                    }
+                }
             }
             catch
             {
             }
         }
 
+        private static void ListView_SizeChanged(object sender, EventArgs e)
+        {
+            var lv = sender as ListView;
+            if (lv != null)
+            {
+                AutoFillFirstColumn(lv);
+            }
+        }
+
+        private static void AutoFillFirstColumn(ListView lv)
+        {
+            if (lv == null || lv.Columns.Count == 0 || lv.ClientSize.Width <= 0)
+                return;
+
+            int otherWidths = 0;
+            for (int i = 1; i < lv.Columns.Count; i++)
+            {
+                otherWidths += lv.Columns[i].Width;
+            }
+
+            int targetWidth = Math.Max(120, lv.ClientSize.Width - otherWidths);
+            if (lv.Columns[0].Width != targetWidth)
+            {
+                lv.Columns[0].Width = targetWidth;
+            }
+        }
+
         private static void DarkListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
         {
+            var lv = sender as ListView;
             using (var bgBrush = new SolidBrush(Color.FromArgb(46, 46, 46)))
             using (var borderPen = new Pen(Color.FromArgb(72, 72, 72)))
             {
                 e.Graphics.FillRectangle(bgBrush, e.Bounds);
                 e.Graphics.DrawLine(borderPen, e.Bounds.Left, e.Bounds.Bottom - 1, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
                 e.Graphics.DrawLine(borderPen, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
+
+                if (lv != null && e.ColumnIndex == lv.Columns.Count - 1 && e.Bounds.Right < lv.ClientSize.Width)
+                {
+                    var extraRect = new Rectangle(e.Bounds.Right, e.Bounds.Top, lv.ClientSize.Width - e.Bounds.Right, e.Bounds.Height);
+                    e.Graphics.FillRectangle(bgBrush, extraRect);
+                    e.Graphics.DrawLine(borderPen, extraRect.Left, extraRect.Bottom - 1, extraRect.Right - 1, extraRect.Bottom - 1);
+                }
             }
 
             TextFormatFlags flags = TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix;
