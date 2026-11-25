@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -28,7 +30,34 @@ namespace IdleMasterReborn
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
+                MigrateLegacyUserConfig();
+
                 Application.Run(new frmMain());
+            }
+        }
+
+        private static void MigrateLegacyUserConfig()
+        {
+            try
+            {
+                string appDataDir = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                    "IdleMasterReborn");
+                if (!Directory.Exists(appDataDir))
+                    return;
+
+                foreach (string configPath in Directory.GetFiles(appDataDir, "user.config", SearchOption.AllDirectories))
+                {
+                    string content = File.ReadAllText(configPath, Encoding.UTF8);
+                    if (content.Contains("IdleMasterExtended.Properties.Settings"))
+                    {
+                        content = content.Replace("IdleMasterExtended.Properties.Settings", "IdleMasterReborn.Properties.Settings");
+                        File.WriteAllText(configPath, content, new UTF8Encoding(false));
+                    }
+                }
+            }
+            catch
+            {
             }
         }
     }
