@@ -1258,10 +1258,21 @@ namespace IdleMasterReborn
             }
         }
 
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+                Activate();
+            }
+        }
+
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             Show();
             WindowState = FormWindowState.Normal;
+            Activate();
         }
         #endregion
 
