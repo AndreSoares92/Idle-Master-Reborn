@@ -70,6 +70,14 @@ namespace IdleMasterReborn
         }
 
         #region BADGES
+        private string GetLoadingStatusText()
+        {
+            if (Settings.Default.IdlingModeTargetHours || Settings.Default.IdlingModeWhitelist)
+                return localization.strings.library_loading;
+
+            return localization.strings.reading_badge_page + ", " + localization.strings.please_wait;
+        }
+
         public async Task LoadBadgesAsync()
         {
             picReadingPage.Visible = true;
@@ -91,6 +99,10 @@ namespace IdleMasterReborn
             else if (Settings.Default.IdlingModeWhitelist)
             {
                 AllBadges.Clear();
+                if (SteamLibrary.CachedGames.Count == 0)
+                {
+                    await SteamLibrary.GetOwnedGamesAsync();
+                }
 
                 foreach (var whitelistID in Settings.Default.whitelist)
                 {
@@ -1157,7 +1169,7 @@ namespace IdleMasterReborn
                 picReadingPage.Visible = true;
                 lblIdle.Visible = false;
                 lblDrops.Visible = true;
-                lblDrops.Text = localization.strings.reading_badge_page + ", " + localization.strings.please_wait;
+                lblDrops.Text = GetLoadingStatusText();
                 await LoadBadgesAsync();
             }
 
@@ -1333,7 +1345,7 @@ namespace IdleMasterReborn
             picReadingPage.Visible = true;
             lblIdle.Visible = false;
             lblDrops.Visible = true;
-            lblDrops.Text = localization.strings.reading_badge_page + ", " + localization.strings.please_wait;
+            lblDrops.Text = GetLoadingStatusText();
             await LoadBadgesAsync();
             StartIdle();
         }
@@ -1656,7 +1668,7 @@ namespace IdleMasterReborn
             }
 
             lblDrops.Visible = true;
-            lblDrops.Text = localization.strings.reading_badge_page + ", " + localization.strings.please_wait;
+            lblDrops.Text = GetLoadingStatusText();
             lblIdle.Visible = false;
             picReadingPage.Visible = true;
 
@@ -1748,7 +1760,7 @@ namespace IdleMasterReborn
                 if (isMultipleIdle)
                 {
                     lblDrops.Visible = true;
-                    lblDrops.Text = localization.strings.reading_badge_page + ", " + localization.strings.please_wait;
+                    lblDrops.Text = GetLoadingStatusText();
                     lblIdle.Visible = false;
                     picReadingPage.Visible = true;
                     await LoadBadgesAsync();
