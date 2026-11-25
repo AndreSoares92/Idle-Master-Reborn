@@ -15,97 +15,60 @@ namespace IdleMasterReborn
             WindowPositionManager.Attach(this);
         }
 
-        private void btnView_Click(object sender, EventArgs e)
-        {
-            txtSessionID.PasswordChar = '\0';
-            txtSteamLoginSecure.PasswordChar = '\0';
-            txtSteamParental.PasswordChar = '\0';
-
-            txtSessionID.Enabled = true;
-            txtSteamLoginSecure.Enabled = true;
-            txtSteamParental.Enabled = true;
-
-            btnView.Visible = false;
-        }
-
         private void frmSettingsAdvanced_Load(object sender, EventArgs e)
         {
             // Localize Form
             btnUpdate.Text = localization.strings.update;
             this.Text = localization.strings.auth_data;
-            ttHelp.SetToolTip(btnView, localization.strings.cookie_warning);
 
             // Read settings
             var customTheme = Settings.Default.customTheme;
-            var whiteIcons = Settings.Default.whiteIcons;
 
             // Define colors
             this.BackColor = customTheme ? Settings.Default.colorBgd : Settings.Default.colorBgdOriginal;
             this.ForeColor = customTheme ? Settings.Default.colorTxt : Settings.Default.colorTxtOriginal;
 
-            // Buttons
-            FlatStyle buttonStyle = customTheme ? FlatStyle.Flat : FlatStyle.Standard;
-            btnView.FlatStyle = btnUpdate.FlatStyle = buttonStyle;
-            btnView.BackColor = btnUpdate.BackColor = this.BackColor;
-            btnView.ForeColor = btnUpdate.ForeColor = this.ForeColor;
-            btnView.Image = customTheme ? Resources.imgView_w : Resources.imgView;
+            // Buttons & inputs
+            btnUpdate.FlatStyle = customTheme ? FlatStyle.Flat : FlatStyle.Standard;
+            btnUpdate.BackColor = this.BackColor;
+            btnUpdate.ForeColor = this.ForeColor;
+
+            Color inputBg = customTheme ? Color.FromArgb(42, 42, 42) : SystemColors.Window;
+            txtSessionID.BackColor = txtSteamLoginSecure.BackColor = txtSteamParental.BackColor = inputBg;
+            txtSessionID.ForeColor = txtSteamLoginSecure.ForeColor = txtSteamParental.ForeColor = this.ForeColor;
+
             ThemeManager.ApplyVisualPolish(this, customTheme);
 
-            var sessionId = SecureStorage.Unprotect(Settings.Default.sessionid);
-            if (!string.IsNullOrWhiteSpace(sessionId))
-            {
-                txtSessionID.Text = sessionId;
-                txtSessionID.Enabled = false;
-            }
-            else
-            {
-                txtSessionID.PasswordChar = '\0';
-            }
+            // Never expose saved cookies; this dialog is write-only for manual replacement.
+            txtSessionID.Text = string.Empty;
+            txtSteamLoginSecure.Text = string.Empty;
+            txtSteamParental.Text = string.Empty;
+            txtSessionID.PasswordChar = '*';
+            txtSteamLoginSecure.PasswordChar = '*';
+            txtSteamParental.PasswordChar = '\0';
 
-            var steamLoginSecure = SecureStorage.Unprotect(Settings.Default.steamLoginSecure);
-            if (!string.IsNullOrWhiteSpace(steamLoginSecure))
-            {
-                txtSteamLoginSecure.Text = steamLoginSecure;
-                txtSteamLoginSecure.Enabled = false;
-            }
-            else
-            {
-                txtSteamLoginSecure.PasswordChar = '\0';
-            }
+            UpdateButtonState();
+        }
 
-            var steamParental = SecureStorage.Unprotect(Settings.Default.steamparental);
-            if (!string.IsNullOrWhiteSpace(steamParental))
-            {
-                txtSteamParental.Text = steamParental;
-                txtSteamParental.Enabled = false;
-            }
-            else
-            {
-                txtSteamParental.PasswordChar = '\0';
-                txtSteamParental.Text = localization.strings.not_required_hint;
-            }
-
-            if (txtSessionID.Enabled && txtSteamLoginSecure.Enabled && txtSteamParental.Enabled)
-            {
-                btnView.Visible = false;
-            }
-
-            btnUpdate.Enabled = false;
+        private void UpdateButtonState()
+        {
+            btnUpdate.Enabled = !string.IsNullOrWhiteSpace(txtSessionID.Text)
+                && !string.IsNullOrWhiteSpace(txtSteamLoginSecure.Text);
         }
 
         private void txtSessionID_TextChanged(object sender, EventArgs e)
         {
-            btnUpdate.Enabled = true;
+            UpdateButtonState();
         }
 
         private void txtSteamLogin_TextChanged(object sender, EventArgs e)
         {
-            btnUpdate.Enabled = true;
+            UpdateButtonState();
         }
 
         private void txtSteamParental_TextChanged(object sender, EventArgs e)
         {
-            btnUpdate.Enabled = true;
+            UpdateButtonState();
         }
 
         private async Task CheckAndSave()
@@ -143,8 +106,8 @@ namespace IdleMasterReborn
             txtSteamLoginSecure.Text = "";
             txtSteamParental.Text = "";
 
-            txtSessionID.PasswordChar = '\0';
-            txtSteamLoginSecure.PasswordChar = '\0';
+            txtSessionID.PasswordChar = '*';
+            txtSteamLoginSecure.PasswordChar = '*';
             txtSteamParental.PasswordChar = '\0';
 
             txtSessionID.Enabled = true;
@@ -155,7 +118,7 @@ namespace IdleMasterReborn
 
             MessageBox.Show(localization.strings.validate_failed);
 
-            btnUpdate.Enabled = true;
+            UpdateButtonState();
         }
 
         private async void btnUpdate_Click(object sender, EventArgs e)

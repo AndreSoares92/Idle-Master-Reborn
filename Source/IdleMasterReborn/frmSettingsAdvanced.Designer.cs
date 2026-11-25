@@ -40,33 +40,32 @@ namespace IdleMasterReborn
             this.txtSteamLoginSecure = new System.Windows.Forms.TextBox();
             this.txtSteamParental = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnView = new System.Windows.Forms.Button();
             this.ttHelp = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(19, 37);
+            this.label1.Location = new System.Drawing.Point(12, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 23);
+            this.label1.Size = new System.Drawing.Size(122, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "sessionid:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(13, 63);
+            this.label2.Location = new System.Drawing.Point(12, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 23);
+            this.label2.Size = new System.Drawing.Size(122, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "steamLoginSecure:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(16, 86);
+            this.label3.Location = new System.Drawing.Point(12, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 32);
+            this.label3.Size = new System.Drawing.Size(122, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "steamparental / steamMachineAuth:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -75,55 +74,43 @@ namespace IdleMasterReborn
             // 
             // txtSessionID
             // 
-            this.txtSessionID.Location = new System.Drawing.Point(123, 34);
+            this.txtSessionID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSessionID.Location = new System.Drawing.Point(140, 20);
             this.txtSessionID.Name = "txtSessionID";
             this.txtSessionID.PasswordChar = '*';
-            this.txtSessionID.Size = new System.Drawing.Size(280, 20);
+            this.txtSessionID.Size = new System.Drawing.Size(275, 20);
             this.txtSessionID.TabIndex = 3;
             this.txtSessionID.TextChanged += new System.EventHandler(this.txtSessionID_TextChanged);
             // 
             // txtSteamLoginSecure
             // 
-            this.txtSteamLoginSecure.Location = new System.Drawing.Point(123, 60);
+            this.txtSteamLoginSecure.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSteamLoginSecure.Location = new System.Drawing.Point(140, 46);
             this.txtSteamLoginSecure.Name = "txtSteamLoginSecure";
             this.txtSteamLoginSecure.PasswordChar = '*';
-            this.txtSteamLoginSecure.Size = new System.Drawing.Size(280, 20);
+            this.txtSteamLoginSecure.Size = new System.Drawing.Size(275, 20);
             this.txtSteamLoginSecure.TabIndex = 4;
             this.txtSteamLoginSecure.TextChanged += new System.EventHandler(this.txtSteamLogin_TextChanged);
             // 
             // txtSteamParental
             // 
-            this.txtSteamParental.Location = new System.Drawing.Point(123, 86);
+            this.txtSteamParental.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSteamParental.Location = new System.Drawing.Point(140, 74);
             this.txtSteamParental.Name = "txtSteamParental";
-            this.txtSteamParental.PasswordChar = '*';
-            this.txtSteamParental.Size = new System.Drawing.Size(280, 20);
+            this.txtSteamParental.Size = new System.Drawing.Size(275, 20);
             this.txtSteamParental.TabIndex = 5;
             this.txtSteamParental.TextChanged += new System.EventHandler(this.txtSteamParental_TextChanged);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(328, 113);
+            this.btnUpdate.Location = new System.Drawing.Point(340, 113);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnView
-            // 
-            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnView.Image = global::IdleMasterReborn.Properties.Resources.imgView;
-            this.btnView.Location = new System.Drawing.Point(123, 113);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(27, 23);
-            this.btnView.TabIndex = 6;
-            this.ttHelp.SetToolTip(this.btnView, "Display information above\r\n\r\n[WARNING] \r\nDo not share this information with anyon" +
-        "e, \r\nas it could potentially be used by an attacker to log into \r\nyour Steam acc" +
-        "ount.");
-            this.btnView.UseVisualStyleBackColor = true;
-            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // ttHelp
             // 
@@ -136,9 +123,8 @@ namespace IdleMasterReborn
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 148);
+            this.ClientSize = new System.Drawing.Size(430, 148);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.txtSteamParental);
             this.Controls.Add(this.txtSteamLoginSecure);
             this.Controls.Add(this.txtSessionID);
@@ -165,7 +151,6 @@ namespace IdleMasterReborn
         private TextBox txtSessionID;
         private TextBox txtSteamLoginSecure;
         private TextBox txtSteamParental;
-        private Button btnView;
         private Button btnUpdate;
         private ToolTip ttHelp;
     }
