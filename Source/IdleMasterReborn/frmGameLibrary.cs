@@ -329,7 +329,7 @@ namespace IdleMasterReborn
             Settings.Default.OnlyOneGameIdle = false;
             Settings.Default.Save();
 
-            mainForm.StopIdle();
+            mainForm.BeginNewIdleSession();
             mainForm.AllBadges.Clear();
             await mainForm.LoadBadgesAsync();
 
@@ -379,7 +379,7 @@ namespace IdleMasterReborn
             Settings.Default.OnlyOneGameIdle = false;
             Settings.Default.Save();
 
-            mainForm.StopIdle();
+            mainForm.BeginNewIdleSession();
             mainForm.AllBadges.Clear();
             await mainForm.LoadBadgesAsync();
 

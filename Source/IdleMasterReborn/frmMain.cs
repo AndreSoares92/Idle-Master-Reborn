@@ -28,6 +28,7 @@ namespace IdleMasterReborn
         private string _lastAccountMismatchKey = "";
         private bool _showingAccountMismatchDialog = false;
         private bool _wasAccountMismatch = false;
+        private int _idleSessionVersion = 0;
         public List<Badge> AllBadges { get; set; }
 
         public IEnumerable<Badge> CanIdleBadges
@@ -340,6 +341,18 @@ namespace IdleMasterReborn
                         }
                         TimeLeft = 300;
                     }
+                    else if (Settings.Default.IdlingModeWhitelist)
+                    {
+                        if (CanIdleBadges.Count() == 1)
+                        {
+                            StartSoloIdle(CanIdleBadges.First());
+                        }
+                        else
+                        {
+                            StartMultipleIdle();
+                        }
+                        DisableCardDropCheckTimer();
+                    }
                     else if (Settings.Default.OnlyOneGameIdle)
                     {
                         StartSoloIdle(CanIdleBadges.First());
@@ -381,6 +394,38 @@ namespace IdleMasterReborn
                 }
 
                 UpdateStateInfo();
+            }
+        }
+
+        public void BeginNewIdleSession()
+        {
+            _idleSessionVersion++;
+            tmrReadyToGo.Enabled = false;
+            tmrStartNext.Enabled = false;
+            StopIdle();
+        }
+
+        private void LayoutMainControls()
+        {
+            picApp.Left = Math.Max(15, (ClientSize.Width - picApp.Width) / 2);
+            lblHoursPlayed.Left = picApp.Left;
+            lblCurrentRemaining.Left = Math.Max(lblHoursPlayed.Right + 8, picApp.Right - lblCurrentRemaining.Width);
+
+            lblGameName.Location = new Point(lblCurrentStatus.Right + 4, lblCurrentStatus.Top);
+            int maxWidth = btnPause.Left - lblGameName.Left - 6;
+            if (maxWidth > 40)
+            {
+                lblGameName.MaximumSize = new Size(maxWidth, lblCurrentStatus.Height + 6);
+            }
+            lblGameName.BringToFront();
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if (WindowState == FormWindowState.Normal)
+            {
+                LayoutMainControls();
             }
         }
 
@@ -505,6 +550,7 @@ namespace IdleMasterReborn
             ShowInterruptiveButtons();
 
             SetFormHeight(3.9);
+            LayoutMainControls();
         }
 
         public void StartMultipleIdle()
@@ -666,7 +712,7 @@ namespace IdleMasterReborn
                     if (badge.HoursPlayed < Settings.Default.TargetHours && CanIdleBadges.Count(b => b.InIdle) < MaxSimultanousCards)
                         badge.Idle();
                 }
-                else if (Settings.Default.fastMode)
+                else if (Settings.Default.fastMode || Settings.Default.IdlingModeWhitelist)
                 {
                     if (CanIdleBadges.Count(b => b.InIdle) < MaxSimultanousCards)
                         badge.Idle();
@@ -982,11 +1028,11 @@ namespace IdleMasterReborn
             SetFormHeight(1.625);
             using (var graphics = CreateGraphics())
             {
-                var point = new Point(Convert.ToInt32(graphics.DpiX * 1.14), Convert.ToInt32(lblGameName.Location.Y));
-                lblGameName.Location = point;
-                point = new Point(Convert.ToInt32(graphics.DpiX * 2.15), Convert.ToInt32(lnkLatestRelease.Location.Y));
+                var point = new Point(Convert.ToInt32(graphics.DpiX * 2.15), Convert.ToInt32(lnkLatestRelease.Location.Y));
                 lnkLatestRelease.Location = point;
             }
+            LayoutMainControls();
+            stopHourBoostToolStripMenuItem.Visible = Settings.Default.IdlingModeTargetHours || Settings.Default.IdlingModeWhitelist;
 
             ThemeManager.ApplyThemeSetting();
             SetTheme();
@@ -1613,12 +1659,19 @@ namespace IdleMasterReborn
             picReadingPage.Visible = true;
 
             tmrReadyToGo.Enabled = false;
+            int session = _idleSessionVersion;
 
             if (await CookieClient.IsLogined())
             {
+                if (session != _idleSessionVersion)
+                    return;
+
                 AccountManager.SaveCurrentAccount();
                 RefreshAccountsMenu();
                 await LoadBadgesAsync();
+                if (session != _idleSessionVersion)
+                    return;
+
                 StartIdle();
             }
             else
@@ -1760,6 +1813,7 @@ namespace IdleMasterReborn
                 ClientSize = new Size(neededWidth, ClientSize.Height);
             }
 
+            LayoutMainControls();
             IsCookieReady = connected;
         }
 

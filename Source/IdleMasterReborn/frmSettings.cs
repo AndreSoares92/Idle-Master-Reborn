@@ -11,6 +11,8 @@ namespace IdleMasterReborn
     public partial class frmSettings : Form
     {
         private bool _isLoadingTheme;
+        private bool _wasHourBoostMode;
+        private bool _behaviorChanged;
 
         public frmSettings()
         {
@@ -45,20 +47,23 @@ namespace IdleMasterReborn
                 Settings.Default.language = selectedLanguage;
             }
 
-            Settings.Default.OneThenMany = Settings.Default.OnlyOneGameIdle 
-                = Settings.Default.fastMode = Settings.Default.IdlingModeWhitelist = Settings.Default.IdlingModeTargetHours = false;
-            
-            if (radFastMode.Checked)
+            if (!_wasHourBoostMode || _behaviorChanged)
             {
-                Settings.Default.fastMode = true;
-            }
-            else if (radOneThenMany.Checked)
-            {
-                Settings.Default.OneThenMany = true;
-            }
-            else
-            {
-                Settings.Default.OnlyOneGameIdle = !radManyThenOne.Checked;
+                Settings.Default.OneThenMany = Settings.Default.OnlyOneGameIdle
+                    = Settings.Default.fastMode = Settings.Default.IdlingModeWhitelist = Settings.Default.IdlingModeTargetHours = false;
+
+                if (radFastMode.Checked)
+                {
+                    Settings.Default.fastMode = true;
+                }
+                else if (radOneThenMany.Checked)
+                {
+                    Settings.Default.OneThenMany = true;
+                }
+                else
+                {
+                    Settings.Default.OnlyOneGameIdle = !radManyThenOne.Checked;
+                }
             }
 
             Settings.Default.minToTray = chkMinToTray.Checked;
@@ -127,6 +132,12 @@ namespace IdleMasterReborn
             ttHints.SetToolTip(radIdleMostDrops, localization.strings.order_most);
             radIdleLeastDrops.Text = localization.strings.order_least;
             ttHints.SetToolTip(radIdleLeastDrops, localization.strings.order_least);
+            _wasHourBoostMode = Settings.Default.IdlingModeWhitelist || Settings.Default.IdlingModeTargetHours;
+            _behaviorChanged = false;
+            radFastMode.Click += (s, ev) => _behaviorChanged = true;
+            radOneGameOnly.Click += (s, ev) => _behaviorChanged = true;
+            radManyThenOne.Click += (s, ev) => _behaviorChanged = true;
+            radOneThenMany.Click += (s, ev) => _behaviorChanged = true;
             lblLanguage.Text = localization.strings.interface_language;
             lblTheme.Text = localization.strings.theme_label;
             _isLoadingTheme = true;

@@ -199,7 +199,9 @@ namespace IdleMasterReborn
             // 
             // lblGameName
             // 
-            this.lblGameName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblGameName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblGameName.AutoEllipsis = true;
+            this.lblGameName.AutoSize = true;
             this.lblGameName.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblGameName.Location = new System.Drawing.Point(96, 135);
             this.lblGameName.Name = "lblGameName";
@@ -493,7 +495,7 @@ namespace IdleMasterReborn
             this.picApp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picApp.Location = new System.Drawing.Point(15, 154);
             this.picApp.Name = "picApp";
-            this.picApp.Size = new System.Drawing.Size(274, 138);
+            this.picApp.Size = new System.Drawing.Size(292, 136);
             this.picApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picApp.TabIndex = 6;
             this.picApp.TabStop = false;
