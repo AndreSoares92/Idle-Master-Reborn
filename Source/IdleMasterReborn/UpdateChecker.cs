@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 
 namespace IdleMasterReborn
 {
@@ -23,7 +20,7 @@ namespace IdleMasterReborn
     {
         public const string RepoUrl = "https://github.com/AndreSoares92/Idle-Master-Reborn";
         public const string ReleasesUrl = "https://github.com/AndreSoares92/Idle-Master-Reborn/releases";
-        public const string LatestReleaseApiUrl = "https://api.github.com/repos/AndreSoares92/Idle-Master-Reborn/releases/latest";
+        public const string LatestReleaseWebUrl = "https://github.com/AndreSoares92/Idle-Master-Reborn/releases/latest";
 
         public static Version GetCurrentVersion()
         {
@@ -45,26 +42,35 @@ namespace IdleMasterReborn
 
             try
             {
-                string json = await Task.Run(() => FetchLatestReleaseJson(currentVersion));
-                var serializer = new JavaScriptSerializer();
-                var data = serializer.DeserializeObject(json) as Dictionary<string, object>;
-                if (data == null)
+                string location = await Task.Run(() => FetchLatestReleaseLocation(currentVersion));
+                if (string.IsNullOrEmpty(location))
                 {
-                    result.Success = false;
-                    result.ErrorMessage = "Invalid response from GitHub.";
+                    result.Success = true;
+                    result.UpdateAvailable = false;
+                    result.LatestVersion = currentVersion;
+                    result.LatestTag = "v" + currentVersion.ToString(3);
                     return result;
                 }
 
-                string tag = data.ContainsKey("tag_name") && data["tag_name"] != null
-                    ? data["tag_name"].ToString().Trim()
-                    : string.Empty;
-                string htmlUrl = data.ContainsKey("html_url") && data["html_url"] != null
-                    ? data["html_url"].ToString().Trim()
-                    : ReleasesUrl;
+                const string tagMarker = "/releases/tag/";
+                int markerIdx = location.IndexOf(tagMarker, StringComparison.OrdinalIgnoreCase);
+                if (markerIdx < 0)
+                {
+                    // No releases published yet (GitHub redirects /releases/latest to /releases).
+                    result.Success = true;
+                    result.UpdateAvailable = false;
+                    result.LatestVersion = currentVersion;
+                    result.LatestTag = "v" + currentVersion.ToString(3);
+                    return result;
+                }
 
-                if (!string.IsNullOrEmpty(htmlUrl))
-                    result.ReleaseUrl = htmlUrl;
+                string tag = location.Substring(markerIdx + tagMarker.Length);
+                int qIdx = tag.IndexOfAny(new[] { '?', '#' });
+                if (qIdx >= 0)
+                    tag = tag.Substring(0, qIdx);
+                tag = Uri.UnescapeDataString(tag).Trim().TrimEnd('/');
 
+                result.ReleaseUrl = location;
                 result.LatestTag = tag;
 
                 Version latestVersion;
@@ -104,19 +110,25 @@ namespace IdleMasterReborn
             }
         }
 
-        private static string FetchLatestReleaseJson(Version currentVersion)
+        private static string FetchLatestReleaseLocation(Version currentVersion)
         {
-            var request = (HttpWebRequest)WebRequest.Create(LatestReleaseApiUrl);
-            request.Method = "GET";
+            var request = (HttpWebRequest)WebRequest.Create(LatestReleaseWebUrl);
+            request.Method = "HEAD";
+            request.AllowAutoRedirect = false;
             request.UserAgent = "IdleMasterReborn/" + currentVersion.ToString(3);
-            request.Accept = "application/vnd.github+json";
             request.Timeout = 10000;
 
             using (var response = (HttpWebResponse)request.GetResponse())
-            using (var stream = response.GetResponseStream())
-            using (var reader = new StreamReader(stream))
             {
-                return reader.ReadToEnd();
+                int code = (int)response.StatusCode;
+                if (code >= 300 && code < 400)
+                {
+                    string loc = response.Headers["Location"];
+                    if (!string.IsNullOrEmpty(loc))
+                        return loc;
+                }
+
+                return response.ResponseUri != null ? response.ResponseUri.AbsoluteUri : string.Empty;
             }
         }
 

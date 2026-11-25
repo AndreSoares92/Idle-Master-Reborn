@@ -12,9 +12,15 @@ namespace IdleMasterReborn
         private const string PersonalizeKey = @"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
         private const int DwmwaUseImmersiveDarkModeBefore20H1 = 19;
         private const int DwmwaUseImmersiveDarkMode = 20;
+        private const int DwmwaCaptionColor = 35;
+        private const int DwmwaTextColor = 36;
+        private const int DwmwaColorDefault = unchecked((int)0xFFFFFFFF);
 
         [DllImport("dwmapi.dll")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, ref int attrValue, int attrSize);
+
+        [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
+        private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
 
         internal static bool IsWindowsDarkTheme()
         {
@@ -69,6 +75,12 @@ namespace IdleMasterReborn
                 {
                     DwmSetWindowAttribute(form.Handle, DwmwaUseImmersiveDarkModeBefore20H1, ref useImmersiveDarkMode, sizeof(int));
                 }
+
+                // Windows 11 22H2+: override accent-colored title bar with dark surface when in dark mode.
+                int captionColor = isDark ? 0x00262626 : DwmwaColorDefault;
+                int textColor = isDark ? 0x00DCDCDC : DwmwaColorDefault;
+                DwmSetWindowAttribute(form.Handle, DwmwaCaptionColor, ref captionColor, sizeof(int));
+                DwmSetWindowAttribute(form.Handle, DwmwaTextColor, ref textColor, sizeof(int));
             }
             catch
             {
@@ -180,6 +192,7 @@ namespace IdleMasterReborn
                 if (lst != null)
                 {
                     lst.BorderStyle = BorderStyle.FixedSingle;
+                    ApplyScrollBarTheme(lst, isDark);
                     if (isDark)
                     {
                         lst.BackColor = Color.FromArgb(32, 32, 32);
@@ -192,11 +205,108 @@ namespace IdleMasterReborn
                     }
                 }
 
+                var lv = ctrl as ListView;
+                if (lv != null)
+                {
+                    lv.BorderStyle = BorderStyle.FixedSingle;
+                    ApplyScrollBarTheme(lv, isDark);
+                    lv.DrawColumnHeader -= DarkListView_DrawColumnHeader;
+                    lv.DrawItem -= DarkListView_DrawItem;
+                    lv.DrawSubItem -= DarkListView_DrawSubItem;
+
+                    if (isDark)
+                    {
+                        lv.OwnerDraw = true;
+                        lv.DrawColumnHeader += DarkListView_DrawColumnHeader;
+                        lv.DrawItem += DarkListView_DrawItem;
+                        lv.DrawSubItem += DarkListView_DrawSubItem;
+                        lv.BackColor = Color.FromArgb(32, 32, 32);
+                        lv.ForeColor = Settings.Default.colorTxt;
+                    }
+                    else
+                    {
+                        lv.OwnerDraw = false;
+                        lv.BackColor = SystemColors.Window;
+                        lv.ForeColor = Settings.Default.colorTxtOriginal;
+                    }
+                }
+
                 if (ctrl.HasChildren)
                 {
                     StyleControls(ctrl.Controls, isDark);
                 }
             }
+        }
+
+        private static void ApplyScrollBarTheme(Control ctrl, bool isDark)
+        {
+            if (ctrl == null)
+                return;
+
+            if (ctrl.IsHandleCreated)
+            {
+                try
+                {
+                    SetWindowTheme(ctrl.Handle, isDark ? "DarkMode_Explorer" : "Explorer", null);
+                }
+                catch
+                {
+                }
+            }
+            else
+            {
+                ctrl.Tag = isDark;
+                ctrl.HandleCreated -= ScrollableControl_HandleCreated;
+                ctrl.HandleCreated += ScrollableControl_HandleCreated;
+            }
+        }
+
+        private static void ScrollableControl_HandleCreated(object sender, EventArgs e)
+        {
+            var ctrl = sender as Control;
+            if (ctrl == null || !(ctrl.Tag is bool))
+                return;
+
+            bool isDark = (bool)ctrl.Tag;
+            try
+            {
+                SetWindowTheme(ctrl.Handle, isDark ? "DarkMode_Explorer" : "Explorer", null);
+            }
+            catch
+            {
+            }
+        }
+
+        private static void DarkListView_DrawColumnHeader(object sender, DrawListViewColumnHeaderEventArgs e)
+        {
+            using (var bgBrush = new SolidBrush(Color.FromArgb(46, 46, 46)))
+            using (var borderPen = new Pen(Color.FromArgb(72, 72, 72)))
+            {
+                e.Graphics.FillRectangle(bgBrush, e.Bounds);
+                e.Graphics.DrawLine(borderPen, e.Bounds.Left, e.Bounds.Bottom - 1, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
+                e.Graphics.DrawLine(borderPen, e.Bounds.Right - 1, e.Bounds.Top, e.Bounds.Right - 1, e.Bounds.Bottom - 1);
+            }
+
+            TextFormatFlags flags = TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix;
+            if (e.Header != null && e.Header.TextAlign == HorizontalAlignment.Right)
+                flags |= TextFormatFlags.Right;
+            else if (e.Header != null && e.Header.TextAlign == HorizontalAlignment.Center)
+                flags |= TextFormatFlags.HorizontalCenter;
+            else
+                flags |= TextFormatFlags.Left;
+
+            Rectangle textBounds = new Rectangle(e.Bounds.X + 4, e.Bounds.Y, Math.Max(0, e.Bounds.Width - 8), e.Bounds.Height);
+            TextRenderer.DrawText(e.Graphics, e.Header != null ? e.Header.Text : string.Empty, e.Font, textBounds, Color.FromArgb(220, 220, 220), flags);
+        }
+
+        private static void DarkListView_DrawItem(object sender, DrawListViewItemEventArgs e)
+        {
+            e.DrawDefault = true;
+        }
+
+        private static void DarkListView_DrawSubItem(object sender, DrawListViewSubItemEventArgs e)
+        {
+            e.DrawDefault = true;
         }
 
         private static void DarkDisabledButton_Paint(object sender, PaintEventArgs e)
