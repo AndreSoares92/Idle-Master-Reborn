@@ -258,6 +258,7 @@ namespace IdleMasterReborn
             pbIdle.Maximum = CardsRemaining > pbIdle.Maximum ? CardsRemaining : pbIdle.Maximum;
             pbIdle.Value = pbIdle.Maximum - CardsRemaining;
             lblHoursPlayed.Text = badge.HoursPlayed + " " + localization.strings.hrs_on_record;
+            LayoutMainControls();
             UpdateStateInfo();
         }
 
@@ -409,7 +410,10 @@ namespace IdleMasterReborn
         {
             picApp.Left = Math.Max(15, (ClientSize.Width - picApp.Width) / 2);
             lblHoursPlayed.Left = picApp.Left;
-            lblCurrentRemaining.Left = Math.Max(lblHoursPlayed.Right + 8, picApp.Right - lblCurrentRemaining.Width);
+
+            int rightEdge = GamesState.Visible ? GamesState.Right : picApp.Right;
+            rightEdge = Math.Min(rightEdge, ClientSize.Width - 15);
+            lblCurrentRemaining.Left = Math.Max(15, rightEdge - lblCurrentRemaining.Width);
 
             lblGameName.Location = new Point(lblCurrentStatus.Right + 4, lblCurrentStatus.Top);
             int maxWidth = btnPause.Left - lblGameName.Left - 6;
@@ -583,6 +587,7 @@ namespace IdleMasterReborn
             RefreshGamesStateListView();
 
             ShowInterruptiveButtons();
+            LayoutMainControls();
 
             SetFormHeight(3.86);
         }

@@ -49,7 +49,8 @@ namespace IdleMasterReborn
             txtSearch = new TextBox
             {
                 Location = new Point(75, 12),
-                Size = new Size(265, 22)
+                Size = new Size(265, 22),
+                BorderStyle = BorderStyle.FixedSingle
             };
             txtSearch.TextChanged += (s, e) => PopulateList();
 

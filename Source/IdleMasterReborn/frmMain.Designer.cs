@@ -186,6 +186,7 @@ namespace IdleMasterReborn
             // 
             // lblCurrentRemaining
             // 
+            this.lblCurrentRemaining.AutoSize = true;
             this.lblCurrentRemaining.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCurrentRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentRemaining.ForeColor = System.Drawing.Color.Blue;
