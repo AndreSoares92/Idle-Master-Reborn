@@ -117,6 +117,16 @@ namespace IdleMasterReborn
                 {
                     tmrCheckCookies.Stop();
 
+                    var loginCookies = await webView.CoreWebView2.CookieManager.GetCookiesAsync("https://login.steampowered.com");
+                    foreach (var cookie in loginCookies)
+                    {
+                        if (cookie.Name == "steamRefresh_steam" && !string.IsNullOrWhiteSpace(cookie.Value))
+                        {
+                            steamRememberLogin = cookie.Value;
+                            break;
+                        }
+                    }
+
                     Settings.Default.sessionid = SecureStorage.Protect(sessionId);
                     Settings.Default.steamLoginSecure = SecureStorage.Protect(steamLoginSecure);
                     Settings.Default.steamparental = SecureStorage.Protect(steamParental);

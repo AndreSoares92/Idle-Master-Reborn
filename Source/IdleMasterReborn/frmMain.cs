@@ -1691,6 +1691,7 @@ namespace IdleMasterReborn
                 if (session != _idleSessionVersion)
                     return;
 
+                tmrReadyToGo.Interval = 1000;
                 AccountManager.SaveCurrentAccount();
                 RefreshAccountsMenu();
                 await LoadBadgesAsync();
@@ -1703,11 +1704,13 @@ namespace IdleMasterReborn
             {
                 if (string.IsNullOrEmpty(Settings.Default.myProfileURL))
                 {
+                    tmrReadyToGo.Interval = 1000;
                     ResetClientStatus();
                 }
                 else
                 {
-                    await CookieClient.RefreshLoginToken();
+                    tmrReadyToGo.Interval = 15000;
+                    tmrReadyToGo.Enabled = true;
                 }
             }
         }
